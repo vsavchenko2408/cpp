@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>E:\My Projects\cpp\other\x64\Debug\other.exe</FullPath>
+      <FullPath>E:\My Projects\cpp\other\x64\Release\other.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

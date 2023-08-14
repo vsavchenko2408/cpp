@@ -1,2 +1,4 @@
 ﻿  other.cpp
-  other.vcxproj -> D:\My Projects\cpp\other\x64\Debug\other.exe
+E:\My Projects\cpp\other\other\other.cpp(74,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+E:\My Projects\cpp\other\other\other.cpp(78,9): warning C4101: i: неиспользованная локальная переменная
+  other.vcxproj -> E:\My Projects\cpp\other\x64\Debug\other.exe
