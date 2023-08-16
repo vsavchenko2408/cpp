@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qtform/">
+    <file alias="Main.qml">E:/My Projects/qt/qtform/Main.qml</file>
+  </qresource>
+</RCC>
+

@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qtform">
+    <file alias="qmldir">E:/My Projects/qt/build-qtform-Desktop_x86_windows_msvc2022_pe_64bit-Debug/qtform/qmldir</file>
+  </qresource>
+</RCC>
+
