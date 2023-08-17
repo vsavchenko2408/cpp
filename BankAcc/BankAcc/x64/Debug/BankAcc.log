@@ -1,15 +1,2 @@
 ﻿  BankAcc.cpp
-C:\My Projects\BankAcc\BankAcc\BankAcc.cpp(91,3): error C2059: синтаксическая ошибка: }
-C:\My Projects\BankAcc\BankAcc\BankAcc.cpp(106,11): warning C4551: в вызове функции отсутствует список аргументов
-C:\My Projects\BankAcc\BankAcc\BankAcc.cpp(78,3): error C2360: пропуск инициализации "a" из-за метки "case"
-C:\My Projects\BankAcc\BankAcc\BankAcc.cpp(76,11): message : см. объявление "a"
-C:\My Projects\BankAcc\BankAcc\BankAcc.cpp(81,3): error C2360: пропуск инициализации "a" из-за метки "case"
-C:\My Projects\BankAcc\BankAcc\BankAcc.cpp(76,11): message : см. объявление "a"
-C:\My Projects\BankAcc\BankAcc\BankAcc.cpp(84,3): error C2360: пропуск инициализации "a" из-за метки "case"
-C:\My Projects\BankAcc\BankAcc\BankAcc.cpp(76,11): message : см. объявление "a"
-C:\My Projects\BankAcc\BankAcc\BankAcc.cpp(86,3): error C2360: пропуск инициализации "a" из-за метки "case"
-C:\My Projects\BankAcc\BankAcc\BankAcc.cpp(76,11): message : см. объявление "a"
-C:\My Projects\BankAcc\BankAcc\BankAcc.cpp(88,3): error C2360: пропуск инициализации "a" из-за метки "case"
-C:\My Projects\BankAcc\BankAcc\BankAcc.cpp(76,11): message : см. объявление "a"
-C:\My Projects\BankAcc\BankAcc\BankAcc.cpp(90,3): error C2361: пропуск инициализации "a" из-за метки "default"
-C:\My Projects\BankAcc\BankAcc\BankAcc.cpp(76,11): message : см. объявление "a"
+  BankAcc.vcxproj -> E:\My Projects\BankAcc\x64\Debug\BankAcc.exe
