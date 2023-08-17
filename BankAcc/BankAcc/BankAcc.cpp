@@ -60,9 +60,10 @@ private:
 };
 
 
+
 int main()
 {
-	banacc a;	
+		banacc a;
 		a.addmoney();
 		a.show();
 		a.take();
@@ -72,5 +73,6 @@ int main()
 		b.show();
 		b.take();
 		b.show();
+		
 	return 0;
 }
