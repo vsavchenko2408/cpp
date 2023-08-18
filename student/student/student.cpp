@@ -1,50 +1,76 @@
 /*
-Задание 3:
-Реализуйте класс Student, представляющий студента.
-Класс должен иметь приватные поля для имени, фамилии, возраста и средней оценки студента.
-Создайте методы для установки и получения значений полей,
-а также метод для вывода информации о студенте на экран.
+Создайте класс Person, представляющий человека. 
+Класс должен содержать приватные поля для имени, даты рождения и адреса. 
+Реализуйте методы для установки и получения значений полей, а также метод для вывода информации о человеке.
+Добавьте подкласс Student, наследующий от Person, с дополнительными полями для номера студенческого билета,
+курса и средней оценки.
+Реализуйте методы для работы с этими полями.
 */
 #include <iostream>
 using namespace std;
-class students
+class person
 {
-public:
-	void add_stdnt()
-	{
-		cout << "Введите имя студента :" << endl;
-		cin >> name;
-		cout << "Введите фамилию студента :" << endl;
-		cin >> surname;
-		cout << "Введите возраст студента :" << endl;
-		cin >> age;
-		cout << "Введите средний балл студента :" << endl;
-		cin >> rate;
-	}
-	void show_info()
+public:	
+void show_info()
 	{
 		cout << "Имя :" << name << endl;
 		cout << "Фамилия :" << surname << endl;
-		cout << "Возраст :" << age << endl;
-		cout << "Средний балл :" << rate << endl;
+		cout << "Дата рождения :" << date << endl;
+		cout << "Адрес : " << adress << endl;
 	}
+void set_info()
+{
+	cout << "Имя :" << name << endl;
+	cin >> name;
+	cout << "Фамилия :" << surname << endl;
+	cin >> surname;
+	cout << "Дата рождения :" << date << endl;
+	cin >> date;
+	cout << "Адрес : " << adress << endl;
+	cin >> adress;
+}
 private:
 	string name;
 	string surname;
-	short int age;
-	short int rate;
+	string date;
+	string adress;
 };
-
+class student : public person
+{
+public:
+	void show_info()
+	{
+		cout << "Номер студенческого билета :" << ID << endl;
+		cout << "Название курса :" << course << endl;
+		cout << "Средний балл :" << grade << endl;
+		
+	}
+	void set_infost()
+	{
+		cout << "Введите номер студенческого билета :" << endl;
+		cin >> ID;
+		cout << "Введите название курса :" <<endl;
+		cin >> course;
+		cout << "Введите средний балл :" << endl;
+		cin >> grade;
+		
+	}
+private:
+	unsigned int ID;
+	string course;
+	float grade;
+};
 int main()
 {
 	setlocale(LC_ALL, "RU");
-	students ivan;
-	ivan.add_stdnt();
-	ivan.show_info();
+	person obj1;
+	obj1.set_info();
+	obj1.show_info();
 
-	students maria;
-	maria.add_stdnt();
-	maria.show_info();
+	student obj2;
+	obj2.set_info();
+	obj2.set_infost();
+	obj2.show_info();
 
 
 
