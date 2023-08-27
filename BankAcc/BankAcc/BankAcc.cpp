@@ -21,7 +21,7 @@ public:
 		money = 0;
 	}
 	
-	void show()
+	void display()
 	{
 		cout << "------------------------------------------------------------------" << endl;
 		cout << "---" << "Name: " << name << endl;
@@ -29,14 +29,14 @@ public:
 		cout << "---" << "Amount money: " << money;
 		cout << "------------------------------------------------------------------" << endl;
 	}
-	void addmoney()
+	void deposit()
 	{
 		ui add=0;
 		cout << "Enter amount: " << endl;
 		cin >> add;
 		money += add;
 	}
-	void take()
+	void withdraw()
 	{
 		
 		ui take = 0;
@@ -64,15 +64,15 @@ private:
 int main()
 {
 		banacc a;
-		a.addmoney();
-		a.show();
-		a.take();
-		a.show();
+		a.deposit();
+		a.display();
+		a.withdraw();
+		a.display();
 		banacc b;
-		b.addmoney();
-		b.show();
-		b.take();
-		b.show();
+		b.deposit();
+		b.display();
+		b.withdraw();
+		b.display();
 		
 	return 0;
 }
