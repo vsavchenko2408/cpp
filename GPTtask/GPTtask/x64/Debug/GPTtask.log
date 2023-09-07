@@ -1,0 +1,3 @@
+﻿  Source.cpp
+C:\Users\Admin\source\GPTtask\GPTtask\Source.cpp(40,2): warning C4154: удаление массива; выполнено преобразование к указателю
+  GPTtask.vcxproj -> C:\Users\Admin\source\GPTtask\x64\Debug\GPTtask.exe
