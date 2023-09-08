@@ -3,7 +3,6 @@ using std::string;
 using std::cout;
 using std::cin;
 using std::endl;
-
 class book
 {
 public:
@@ -18,7 +17,6 @@ public:
 		cout << "¬ведите год издани€ : ";
 		cin >> year;
 	}
-	
 	void set_info(string ,string ,string , short int)
 	{
 		this->name = name;
@@ -46,11 +44,5 @@ int main()
 	book a;
 	book b;
 	a.get_info();
-
 	b.get_info();
-
-
-
-
-
 }
