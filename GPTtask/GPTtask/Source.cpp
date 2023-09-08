@@ -6,41 +6,16 @@ using std::endl;
 int main()
 {
 	setlocale(LC_ALL, "RU");
-	int arr[10];
-	for (int i = 0; i < 10; i++)
+	int value = 0;
+	int input = 0;;
+	unsigned short counter = 0;
+	while (input >= 0)
 	{
-		 arr[i] = i+1;
+		cout << "Введите число: " << endl;
+		cin >> input;
+		value += input;
+		counter++;	
 	}
-	for (int i = 0; i < 10; i++)
-	{
-		cout << arr[i] << endl;
-	}
-	int arradd[5];
-	/////////////
-	cout << endl;
-	for (int i = 0; i < 5; i++)
-	{
-		arradd[i] = i + 11;
-	}
-	for (int i = 0; i < 5; i++)
-	{
-		cout << arradd[i] << endl;
-	}
-	////
-	int newarr[15];
-	for (int i = 0; i < 10; i++)
-	{
-		newarr[i] = arr[i];
-	}
-	for (int i = 0; i < 5; i++)
-	{
-		newarr[i+10] = arradd[i];
-	}
-	///////
-	
-	for (int i = 0; i < 15; i++)
-	{
-	cout <<	newarr[i] <<endl;
-	}
-
+	cout << "Сумма введенных чисел = " << value << endl;
+	cout << "Среднее значение введенных чисел = " << (float)value / counter << endl;
 }
