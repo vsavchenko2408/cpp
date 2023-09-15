@@ -26,11 +26,17 @@ public:
 	}
 	void speed_down()
 	{
-		speed =- 10;
-		if (speed < 0)
+		if (speed > 0)
 		{
-			cout << "Car is stopped! " << endl;
-			speed = 0;
+			speed -= 10;
+			if (speed < 0)
+			{
+				speed = 0;
+			}
+		}
+		else
+		{
+			cout << "Car is already stopped! " << endl;
 		}
 	}
 	void get_info()
@@ -54,11 +60,9 @@ int main()
 	car car1;
 	car1.speed_up();
 	car1.speed_down();
-	car1.speed_down();
-	car1.speed_down();
-	car1.speed_down();
-	car1.speed_down();
-	car1.speed_down();
-	car1.speed_down();
 	car1.get_info();
+	car car2;
+	car2.speed_up();
+	car2.speed_down();
+	car2.get_info();
 }
