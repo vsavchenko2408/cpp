@@ -1,80 +1,91 @@
 ﻿#include <iostream>
-#include <windows.h>
-#include <list>
-typedef unsigned int ui;
+#include <vector>
+#include <string>
+#include <ctime>
+#include <iomanip>
+
 using namespace std;
-struct date
-{
 
-};
-class banacc
-{
+class Transaction {
 public:
-	banacc()
-	{
-		cout << "Enter ID :" << endl;
-		cin >> id_acc;
-		cout << " Enter your name : " << endl;
-		cin >> name;
+    Transaction(string type, double amount) : type(type), amount(amount) {
+        time_t now = time(0);
+        char buffer[26];
+        ctime_s(buffer, sizeof(buffer), &now);
+        transactionTime = buffer;
+    }
 
-		money = 0;
-	}
-
-	void show()
-	{
-		cout << "------------------------------------------------------------------" << endl;
-		cout << "---" << "Name: " << name << endl;
-		cout << "---" << "ID account: " << id_acc << endl;
-		cout << "---" << "Amount money: " << money;
-		cout << "------------------------------------------------------------------" << endl;
-	}
-	void deposit()
-	{
-		ui add = 0;
-		cout << "Enter amount: " << endl;
-		cin >> add;
-		money += add;
-	}
-	void withdraw()
-	{
-
-		ui take = 0;
-		cout << "How money you want take: " << endl;
-		cin >> take;
-		if (money < take)
-		{
-			cout << "Not enough money" << endl;
-		}
-		else
-		{
-			money -= take;
-		}
-	}
-
+    void displayTransaction() const {
+        cout << setw(25) << left << transactionTime;
+        cout << setw(15) << left << type;
+        cout << "$" << amount << endl;
+    }
 
 private:
-	string name;
-	ui id_acc;
-	ui money;
+    string transactionTime;
+    string type;
+    double amount;
 };
-class transaction
-{
+
+class BankAccount {
 public:
+    BankAccount(string ownerName, string accountNumber) : ownerName(ownerName), accountNumber(accountNumber), balance(0.0) {}
+
+    void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            Transaction transaction("Deposit", amount);
+            transactions.push_back(transaction);
+            cout << "Deposited $" << amount << " into account." << endl;
+        }
+        else {
+            cout << "Invalid deposit amount." << endl;
+        }
+    }
+
+    void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            Transaction transaction("Withdrawal", amount);
+            transactions.push_back(transaction);
+            cout << "Withdrawn $" << amount << " from account." << endl;
+        }
+        else if (amount <= 0) {
+            cout << "Invalid withdrawal amount." << endl;
+        }
+        else {
+            cout << "Insufficient funds." << endl;
+        }
+    }
+
+    void printTransactions() const {
+        cout << "Transaction History for Account: " << accountNumber << endl;
+        cout << setw(25) << left << "Date/Time" << setw(15) << left << "Type" << "Amount" << endl;
+        cout << setfill('-') << setw(45) << "" << setfill(' ') << endl;
+
+        for (const Transaction& transaction : transactions) {
+            transaction.displayTransaction();
+        }
+
+        cout << setfill('-') << setw(45) << "" << setfill(' ') << endl;
+        cout << "Current Balance: $" << balance << endl;
+    }
 
 private:
-
+    string ownerName;
+    string accountNumber;
+    double balance;
+    vector<Transaction> transactions;
 };
 
+int main() {
+    BankAccount account("John Doe", "1234567890");
 
-int main()
-{
-	SYSTEMTIME t;
-	GetLocalTime(&t);
-	cout << t.wDay << ".";
-	cout << t.wMonth << ".";
-	cout << t.wYear << "." << endl;
-	
-	
+    account.deposit(1000.0);
+    account.withdraw(500.0);
+    account.deposit(200.0);
 
-	return 0;
+    account.printTransactions();
+
+    return 0;
 }
