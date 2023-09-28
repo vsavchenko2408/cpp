@@ -1,12 +1,11 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-int code();
 class Matrix
 {
 	
 public:
-	friend int code();
+	
 	void addition()
 	{
 		cout << "Результат сложения :" << endl;
@@ -140,26 +139,14 @@ private:
 	vector<vector<int>> matrix_b;
 
 };
-
 int main()
 {
 	setlocale(LC_ALL, "RU");
-
 	Matrix M;
 	M.set_size_ma();
 	M.set_size_mb();
-
 	M.get_ma();
 	M.get_mb();
-	
-	if (code() == 1) { M.addition();}
-	if (code() == 2) {M.subtraction();}
-	if (code() == 3) { M.multiplication(); }
-	if (code() == 4) { M.transposition(); }
-	return 0;
-}
-int code()
-{
 	try
 	{
 		cout << "Выберите операцию :" << endl;
@@ -172,16 +159,16 @@ int code()
 		switch (code)
 		{
 		case 1:
-			return 1;
+			M.addition();
 			break;
 		case 2:
-			return 2;
+			M.subtraction();
 			break;
 		case 3:
-			return 3;
+			M.multiplication();
 			break;
 		case 4:
-			return 4;
+			M.transposition();
 			break;
 		default:
 			throw(code);
@@ -193,4 +180,5 @@ int code()
 		cout << "Не верный ввод кода! " << endl;
 		return 0;
 	}
+	return 0;
 }
