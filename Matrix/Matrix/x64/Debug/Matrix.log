@@ -1,0 +1,36 @@
+﻿  FileName.cpp
+C:\Users\DerMeister\My Projects\Matrix\Matrix\FileName.cpp(10,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+C:\Users\DerMeister\My Projects\Matrix\Matrix\FileName.cpp(21,10): error C2665: "std::vector<std::vector<int,std::allocator<int>>,std::allocator<std::vector<int,std::allocator<int>>>>::push_back": ни одна перегруженная функция не может преобразовать все типы аргументов
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vector(876,23): message : может быть "void std::vector<std::vector<int,std::allocator<int>>,std::allocator<std::vector<int,std::allocator<int>>>>::push_back(_Ty &&)"
+          with
+          [
+              _Ty=std::vector<int,std::allocator<int>>
+          ]
+C:\Users\DerMeister\My Projects\Matrix\Matrix\FileName.cpp(21,10): message : "void std::vector<std::vector<int,std::allocator<int>>,std::allocator<std::vector<int,std::allocator<int>>>>::push_back(_Ty &&)": невозможно преобразовать аргумент 1 из "int" в "_Ty &&"
+          with
+          [
+              _Ty=std::vector<int,std::allocator<int>>
+          ]
+C:\Users\DerMeister\My Projects\Matrix\Matrix\FileName.cpp(21,21): message : Причина: невозможно преобразовать "int" в "_Ty"
+          with
+          [
+              _Ty=std::vector<int,std::allocator<int>>
+          ]
+C:\Users\DerMeister\My Projects\Matrix\Matrix\FileName.cpp(21,21): message : Конструктор для class "std::vector<int,std::allocator<int>>" объявлен как "explicit"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vector(872,23): message : или       "void std::vector<std::vector<int,std::allocator<int>>,std::allocator<std::vector<int,std::allocator<int>>>>::push_back(const _Ty &)"
+          with
+          [
+              _Ty=std::vector<int,std::allocator<int>>
+          ]
+C:\Users\DerMeister\My Projects\Matrix\Matrix\FileName.cpp(21,10): message : "void std::vector<std::vector<int,std::allocator<int>>,std::allocator<std::vector<int,std::allocator<int>>>>::push_back(const _Ty &)": невозможно преобразовать аргумент 1 из "int" в "const _Ty &"
+          with
+          [
+              _Ty=std::vector<int,std::allocator<int>>
+          ]
+C:\Users\DerMeister\My Projects\Matrix\Matrix\FileName.cpp(21,21): message : Причина: невозможно преобразовать "int" в "const _Ty"
+          with
+          [
+              _Ty=std::vector<int,std::allocator<int>>
+          ]
+C:\Users\DerMeister\My Projects\Matrix\Matrix\FileName.cpp(21,21): message : Конструктор для class "std::vector<int,std::allocator<int>>" объявлен как "explicit"
+C:\Users\DerMeister\My Projects\Matrix\Matrix\FileName.cpp(21,10): message : при попытке сопоставить список аргументов "(int)"
