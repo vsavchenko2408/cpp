@@ -1,5 +1,5 @@
 ﻿  FileName.cpp
-C:\Users\DerMeister\My Projects\tictactoe\tictactoe\FileName.cpp(69,7): error C2461: field: отсутствие в синтаксисе конструктора формальных параметров
+C:\Users\DerMeister\My Projects\tictactoe\tictactoe\FileName.cpp(66,7): error C2461: field: отсутствие в синтаксисе конструктора формальных параметров
 C:\Users\DerMeister\My Projects\tictactoe\tictactoe\FileName.cpp(31,11): error C2760: синтаксическая ошибка: непредвиденный элемент "константа". Ожидается "код выражения"
 C:\Users\DerMeister\My Projects\tictactoe\tictactoe\FileName.cpp(31,13): error C2059: синтаксическая ошибка: [
 C:\Users\DerMeister\My Projects\tictactoe\tictactoe\FileName.cpp(34,11): error C2760: синтаксическая ошибка: непредвиденный элемент "константа". Ожидается "код выражения"
