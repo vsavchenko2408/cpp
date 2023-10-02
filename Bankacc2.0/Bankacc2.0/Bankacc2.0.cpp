@@ -1,15 +1,14 @@
 ﻿#include <iostream>
-#include <windows.h>
-#include <list>
-typedef unsigned int ui;
-using namespace std;
-struct date
-{
+#include <vector>
+#include <string>
+#include <ctime>
+#include <iomanip>
 
-};
-class banacc
-{
+using namespace std;
+
+class Transaction {
 public:
+<<<<<<< HEAD
 	banacc()
 	{
 		cout << "Введите ID :" << endl;
@@ -49,21 +48,87 @@ public:
 			money -= take;
 		}
 	}
+=======
+    Transaction(string type, double amount) : type(type), amount(amount) {
+        time_t now = time(0);
+        char buffer[26];
+        ctime_s(buffer, sizeof(buffer), &now);
+        transactionTime = buffer;
+    }
+
+    void displayTransaction() const {
+        cout << setw(25) << left << transactionTime;
+        cout << setw(15) << left << type;
+        cout << "$" << amount << endl;
+    }
+
+>>>>>>> 634f6e2ff5c938d2b63c45cb4894164e5530f206
 private:
-	string name;
-	ui id_acc;
-	ui money;
+    string transactionTime;
+    string type;
+    double amount;
 };
-class transaction
-{
+
+class BankAccount {
 public:
+    BankAccount(string ownerName, string accountNumber) : ownerName(ownerName), accountNumber(accountNumber), balance(0.0) {}
+
+    void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            Transaction transaction("Deposit", amount);
+            transactions.push_back(transaction);
+            cout << "Deposited $" << amount << " into account." << endl;
+        }
+        else {
+            cout << "Invalid deposit amount." << endl;
+        }
+    }
+
+    void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            Transaction transaction("Withdrawal", amount);
+            transactions.push_back(transaction);
+            cout << "Withdrawn $" << amount << " from account." << endl;
+        }
+        else if (amount <= 0) {
+            cout << "Invalid withdrawal amount." << endl;
+        }
+        else {
+            cout << "Insufficient funds." << endl;
+        }
+    }
+
+    void printTransactions() const {
+        cout << "Transaction History for Account: " << accountNumber << endl;
+        cout << setw(25) << left << "Date/Time" << setw(15) << left << "Type" << "Amount" << endl;
+        cout << setfill('-') << setw(45) << "" << setfill(' ') << endl;
+
+        for (const Transaction& transaction : transactions) {
+            transaction.displayTransaction();
+        }
+
+        cout << setfill('-') << setw(45) << "" << setfill(' ') << endl;
+        cout << "Current Balance: $" << balance << endl;
+    }
 
 private:
+<<<<<<< HEAD
 	bool trans;
 
+=======
+    string ownerName;
+    string accountNumber;
+    double balance;
+    vector<Transaction> transactions;
+>>>>>>> 634f6e2ff5c938d2b63c45cb4894164e5530f206
 };
 
+int main() {
+    BankAccount account("John Doe", "1234567890");
 
+<<<<<<< HEAD
 int main()
 {
 	setlocale(LC_ALL, "RU");
@@ -74,6 +139,13 @@ int main()
 	a.withdraw();
 	
 	
+=======
+    account.deposit(1000.0);
+    account.withdraw(500.0);
+    account.deposit(200.0);
+>>>>>>> 634f6e2ff5c938d2b63c45cb4894164e5530f206
 
-	return 0;
+    account.printTransactions();
+
+    return 0;
 }
