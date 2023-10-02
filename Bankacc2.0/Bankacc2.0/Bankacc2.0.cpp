@@ -12,9 +12,9 @@ class banacc
 public:
 	banacc()
 	{
-		cout << "Enter ID :" << endl;
+		cout << "Введите ID :" << endl;
 		cin >> id_acc;
-		cout << " Enter your name : " << endl;
+		cout << " Введите имя : " << endl;
 		cin >> name;
 
 		money = 0;
@@ -23,35 +23,32 @@ public:
 	void show()
 	{
 		cout << "------------------------------------------------------------------" << endl;
-		cout << "---" << "Name: " << name << endl;
-		cout << "---" << "ID account: " << id_acc << endl;
-		cout << "---" << "Amount money: " << money;
+		cout << "---" << "Имя: " << name << endl;
+		cout << "---" << "ID аккаунта: " << id_acc << endl;
+		cout << "---" << "Количество денег: " << money;
 		cout << "------------------------------------------------------------------" << endl;
 	}
 	void deposit()
 	{
 		ui add = 0;
-		cout << "Enter amount: " << endl;
+		cout << "Введите сумму: " << endl;
 		cin >> add;
 		money += add;
 	}
 	void withdraw()
 	{
-
 		ui take = 0;
-		cout << "How money you want take: " << endl;
+		cout << "Какую сумму вы хотите снять? : " << endl;
 		cin >> take;
 		if (money < take)
 		{
-			cout << "Not enough money" << endl;
+			cout << "Недостаточно денег на счету!" << endl;
 		}
 		else
 		{
 			money -= take;
 		}
 	}
-
-
 private:
 	string name;
 	ui id_acc;
@@ -62,17 +59,19 @@ class transaction
 public:
 
 private:
+	bool trans;
 
 };
 
 
 int main()
 {
-	SYSTEMTIME t;
-	GetLocalTime(&t);
-	cout << t.wDay << ".";
-	cout << t.wMonth << ".";
-	cout << t.wYear << "." << endl;
+	setlocale(LC_ALL, "RU");
+	banacc a;
+	a.deposit();
+	a.show();
+	a.withdraw();
+	a.withdraw();
 	
 	
 
