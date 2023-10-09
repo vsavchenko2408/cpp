@@ -85,8 +85,11 @@ int main()
     setlocale(LC_ALL, "RU");
     field A;
     A.set_step(2, '0');
+    A.get_field();
     A.set_step(5, '0');
+    A.get_field();
     A.set_step(9, '0');
+    A.get_field();
     A.set_step(13, '0');
     A.get_field();
 
