@@ -18,7 +18,7 @@
 
 #include <iostream>
 using namespace std;
-
+void hello();
 class field
 {
 public:
@@ -84,6 +84,8 @@ int main()
 {
     setlocale(LC_ALL, "RU");
     field A;
+    hello();
+
     A.set_step(2, '0');
     A.get_field();
     A.set_step(5, '0');
@@ -94,4 +96,14 @@ int main()
     A.get_field();
 
     return 0;
+}
+
+void hello()
+{
+    cout << "\t\tИгра крестики-нолики " << endl;
+    cout << "Правила игры:" << endl;
+    cout << "Игрок А играет символом О" << endl;
+    cout << "Игрок B играет символом X" << endl;
+    cout << "При ходе нужно ввести символ О или Х " << endl;
+    cout << "и ввести номер ячейки куда хотите поставить символ от 1 до 9" << endl;
 }
