@@ -22,6 +22,7 @@ void hello();
 class field
 {
 public:
+   
     void set_step(int a, char b)
     {
         try {
@@ -76,24 +77,31 @@ public:
         }
         cout << endl;
     }
+   // friend class player;
 private:
 
     char fld[3][3] = { '#','#','#','#','#','#','#','#','#' };
 };
+class player
+{
+    friend void field::set_step(int a, char b);
+};
 int main()
 {
     setlocale(LC_ALL, "RU");
-    field A;
+    field game;
     hello();
-
+    player A;
+    player B;
+    
     A.set_step(2, '0');
-    A.get_field();
-    A.set_step(5, '0');
-    A.get_field();
+    game.get_field();
+    B.set_step(5, '0');
+    game.get_field();
     A.set_step(9, '0');
-    A.get_field();
+    game.get_field();
     A.set_step(13, '0');
-    A.get_field();
+    game.get_field();
 
     return 0;
 }
