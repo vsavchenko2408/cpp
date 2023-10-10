@@ -110,7 +110,7 @@ int main()
 
     hello();
     player A;
-    player B;
+   
     
     A.set_step();
     A.get_field();
