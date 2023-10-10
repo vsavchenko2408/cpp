@@ -19,12 +19,14 @@
 #include <iostream>
 using namespace std;
 void hello();
+class player;
 class field
 {
 public:
-   
+    
     void set_step(int a, char b)
     {
+        
         try {
             switch (a)
             {
@@ -77,31 +79,47 @@ public:
         }
         cout << endl;
     }
-   // friend class player;
+   
 private:
-
+    
     char fld[3][3] = { '#','#','#','#','#','#','#','#','#' };
 };
+
+
 class player
 {
-    friend void field::set_step(int a, char b);
+public:
+    field A;
+    void set_step()
+    {
+        int a;
+        char b;
+        cout << "Введите номер клетки и символ" << endl;
+        cin >> a;
+        cin >> b;
+        A.set_step(a,b);
+    }
+    void get_field()
+    {
+        A.get_field();
+    }
 };
 int main()
 {
     setlocale(LC_ALL, "RU");
-    field game;
+
     hello();
     player A;
     player B;
     
-    A.set_step(2, '0');
-    game.get_field();
-    B.set_step(5, '0');
-    game.get_field();
-    A.set_step(9, '0');
-    game.get_field();
-    A.set_step(13, '0');
-    game.get_field();
+    A.set_step();
+    A.get_field();
+    A.set_step();
+    A.get_field();
+    A.set_step();
+    A.get_field();
+    A.set_step();
+    A.get_field();
 
     return 0;
 }

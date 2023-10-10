@@ -1,9 +1,2 @@
 ﻿  FileName.cpp
-C:\Users\DerMeister\MyProjects\tictactoe\tictactoe\FileName.cpp(97,7): error C2039: "set_step": не является членом "player".
-C:\Users\DerMeister\MyProjects\tictactoe\tictactoe\FileName.cpp(85,7): message : см. объявление "player"
-C:\Users\DerMeister\MyProjects\tictactoe\tictactoe\FileName.cpp(99,7): error C2039: "set_step": не является членом "player".
-C:\Users\DerMeister\MyProjects\tictactoe\tictactoe\FileName.cpp(85,7): message : см. объявление "player"
-C:\Users\DerMeister\MyProjects\tictactoe\tictactoe\FileName.cpp(101,7): error C2039: "set_step": не является членом "player".
-C:\Users\DerMeister\MyProjects\tictactoe\tictactoe\FileName.cpp(85,7): message : см. объявление "player"
-C:\Users\DerMeister\MyProjects\tictactoe\tictactoe\FileName.cpp(103,7): error C2039: "set_step": не является членом "player".
-C:\Users\DerMeister\MyProjects\tictactoe\tictactoe\FileName.cpp(85,7): message : см. объявление "player"
+  tictactoe.vcxproj -> C:\Users\DerMeister\MyProjects\tictactoe\x64\Debug\tictactoe.exe
