@@ -8,6 +8,47 @@ using namespace std;
 
 class Transaction {
 public:
+<<<<<<< HEAD
+	banacc()
+	{
+		cout << "Введите ID :" << endl;
+		cin >> id_acc;
+		cout << " Введите имя : " << endl;
+		cin >> name;
+
+		money = 0;
+	}
+
+	void show()
+	{
+		cout << "------------------------------------------------------------------" << endl;
+		cout << "---" << "Имя: " << name << endl;
+		cout << "---" << "ID аккаунта: " << id_acc << endl;
+		cout << "---" << "Количество денег: " << money;
+		cout << "------------------------------------------------------------------" << endl;
+	}
+	void deposit()
+	{
+		ui add = 0;
+		cout << "Введите сумму: " << endl;
+		cin >> add;
+		money += add;
+	}
+	void withdraw()
+	{
+		ui take = 0;
+		cout << "Какую сумму вы хотите снять? : " << endl;
+		cin >> take;
+		if (money < take)
+		{
+			cout << "Недостаточно денег на счету!" << endl;
+		}
+		else
+		{
+			money -= take;
+		}
+	}
+=======
     Transaction(string type, double amount) : type(type), amount(amount) {
         time_t now = time(0);
         char buffer[26];
@@ -21,6 +62,7 @@ public:
         cout << "$" << amount << endl;
     }
 
+>>>>>>> 634f6e2ff5c938d2b63c45cb4894164e5530f206
 private:
     string transactionTime;
     string type;
@@ -72,18 +114,36 @@ public:
     }
 
 private:
+<<<<<<< HEAD
+	bool trans;
+
+=======
     string ownerName;
     string accountNumber;
     double balance;
     vector<Transaction> transactions;
+>>>>>>> 634f6e2ff5c938d2b63c45cb4894164e5530f206
 };
 
 int main() {
     BankAccount account("John Doe", "1234567890");
 
+<<<<<<< HEAD
+int main()
+{
+	setlocale(LC_ALL, "RU");
+	banacc a;
+	a.deposit();
+	a.show();
+	a.withdraw();
+	a.withdraw();
+	
+	
+=======
     account.deposit(1000.0);
     account.withdraw(500.0);
     account.deposit(200.0);
+>>>>>>> 634f6e2ff5c938d2b63c45cb4894164e5530f206
 
     account.printTransactions();
 
