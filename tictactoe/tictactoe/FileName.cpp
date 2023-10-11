@@ -79,14 +79,12 @@ public:
         }
         cout << endl;
     }
-    bool win()//функцию писал chatGPT вместо моей неудачной
+    bool check_win()
     {
         // Проверка горизонтальных строк
         for (int i = 0; i < 3; i++)
         {
-            if ((fld[i][0] == 'x' or fld[i][0] == 'o') &&
-                (fld[i][1] == 'x' or fld[i][1] == 'o') &&
-                (fld[i][2] == 'x' or fld[i][2] == 'o'))
+            if (fld[i][0] == fld[i][1] && fld[i][1] == fld[i][2] && fld[i][0] != ' ')
             {
                 return true;
             }
@@ -95,24 +93,18 @@ public:
         // Проверка вертикальных столбцов
         for (int j = 0; j < 3; j++)
         {
-            if ((fld[0][j] == 'x' or fld[0][j] == 'o') &&
-                (fld[1][j] == 'x' or fld[1][j] == 'o') &&
-                (fld[2][j] == 'x' or fld[2][j] == 'o'))
+            if (fld[0][j] == fld[1][j] && fld[1][j] == fld[2][j] && fld[0][j] != ' ')
             {
                 return true;
             }
         }
 
         // Проверка диагоналей
-        if ((fld[0][0] == 'x' or fld[0][0] == 'o') &&
-            (fld[1][1] == 'x' or fld[1][1] == 'o') &&
-            (fld[2][2] == 'x' or fld[2][2] == 'o'))
+        if (fld[0][0] == fld[1][1] && fld[1][1] == fld[2][2] && fld[0][0] != ' ')
         {
             return true;
         }
-        if ((fld[0][2] == 'x' or fld[0][2] == 'o') &&
-            (fld[1][1] == 'x' or fld[1][1] == 'o') &&
-            (fld[2][0] == 'x' or fld[2][0] == 'o'))
+        if (fld[0][2] == fld[1][1] && fld[1][1] == fld[2][0] && fld[0][2] != ' ')
         {
             return true;
         }
@@ -120,6 +112,7 @@ public:
         // Если не найдено ни одной выигрышной комбинации, возвращаем false
         return false;
     }
+ 
 private:
     
     char fld[3][3] = { '#','#','#','#','#','#','#','#','#' };
@@ -143,7 +136,7 @@ public:
     {
         A.get_field();
     }
-    bool win = A.win();
+    bool win = A.check_win();
     
 };
 int main()
@@ -151,18 +144,35 @@ int main()
     setlocale(LC_ALL, "RU");
 
     hello();
-    player A;
-   
-    do
+
+    while (true) // Бесконечный цикл игры
     {
-        A.set_step();
-        A.get_field();
-    } while (A.win);
-   
-    
+        player A;
+
+        while (true) // Бесконечный цикл одной игры
+        {
+            A.set_step();
+            A.get_field();
+
+            if (A.win)
+            {
+                cout << "Победил игрок!" << endl;
+                break;
+            }
+        }
+
+        char play_again;
+        cout << "Сыграть еще раз? (y/n): ";
+        cin >> play_again;
+        if (play_again == 'n' || play_again == 'N')
+        {
+            break; // Выход из бесконечного цикла игры
+        }
+    }
 
     return 0;
 }
+
 
 void hello()
 {
