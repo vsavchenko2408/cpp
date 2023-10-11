@@ -79,7 +79,47 @@ public:
         }
         cout << endl;
     }
-   
+    bool win()//функцию писал chatGPT вместо моей неудачной
+    {
+        // Проверка горизонтальных строк
+        for (int i = 0; i < 3; i++)
+        {
+            if ((fld[i][0] == 'x' or fld[i][0] == 'o') &&
+                (fld[i][1] == 'x' or fld[i][1] == 'o') &&
+                (fld[i][2] == 'x' or fld[i][2] == 'o'))
+            {
+                return true;
+            }
+        }
+
+        // Проверка вертикальных столбцов
+        for (int j = 0; j < 3; j++)
+        {
+            if ((fld[0][j] == 'x' or fld[0][j] == 'o') &&
+                (fld[1][j] == 'x' or fld[1][j] == 'o') &&
+                (fld[2][j] == 'x' or fld[2][j] == 'o'))
+            {
+                return true;
+            }
+        }
+
+        // Проверка диагоналей
+        if ((fld[0][0] == 'x' or fld[0][0] == 'o') &&
+            (fld[1][1] == 'x' or fld[1][1] == 'o') &&
+            (fld[2][2] == 'x' or fld[2][2] == 'o'))
+        {
+            return true;
+        }
+        if ((fld[0][2] == 'x' or fld[0][2] == 'o') &&
+            (fld[1][1] == 'x' or fld[1][1] == 'o') &&
+            (fld[2][0] == 'x' or fld[2][0] == 'o'))
+        {
+            return true;
+        }
+
+        // Если не найдено ни одной выигрышной комбинации, возвращаем false
+        return false;
+    }
 private:
     
     char fld[3][3] = { '#','#','#','#','#','#','#','#','#' };
@@ -103,6 +143,8 @@ public:
     {
         A.get_field();
     }
+    bool win = A.win();
+    
 };
 int main()
 {
@@ -111,15 +153,13 @@ int main()
     hello();
     player A;
    
+    do
+    {
+        A.set_step();
+        A.get_field();
+    } while (A.win);
+   
     
-    A.set_step();
-    A.get_field();
-    A.set_step();
-    A.get_field();
-    A.set_step();
-    A.get_field();
-    A.set_step();
-    A.get_field();
 
     return 0;
 }
