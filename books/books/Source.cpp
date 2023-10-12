@@ -48,7 +48,9 @@ public:
 	//void find_book(year)
 
 	void list_book()
-	{}
+	{
+
+	}
 private:
 
 	list<string> books;
