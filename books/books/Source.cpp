@@ -9,10 +9,7 @@ using namespace std;
 class book
 {
 public:
-	book()
-	{
-
-	}
+	
 	book()
 	{
 		cout << "¬ведите название книги: ";
