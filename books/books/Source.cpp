@@ -37,7 +37,7 @@ class library
 public:
 	void add_book(book)
 	{
-		books.push_back();
+
 	}
 	void remove_book(book)
 	{
@@ -48,10 +48,7 @@ public:
 	//void find_book(year)
 
 	void list_book()
-	{
-		
-	
-	}
+	{}
 private:
 
 	list<string> books;
@@ -61,20 +58,20 @@ private:
 int main()
 {
 	setlocale(LC_ALL, "RU");
-	//ofstream out;
-	//book first;
-	//out.open("Library.txt");
-	//if (!out.is_open())
-	//{
-	//	cout << "Ошибка открытия файла!" << endl;
-	//}
-	//else
-	//{
-	//	out.write((char*)&first,sizeof(book));
-	//	cout << "Запись в файл успешна. " << endl;
-	//}
+	ofstream out;
+	book first;
+	out.open("Library.txt");
+	if (!out.is_open())
+	{
+		cout << "Ошибка открытия файла!" << endl;
+	}
+	else
+	{
+		out.write((char*)&first,sizeof(book));
+		cout << "Запись в файл успешна. " << endl;
+	}
 
-	//out.close();
+	out.close();
 	
 
 
