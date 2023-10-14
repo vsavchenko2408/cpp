@@ -31,27 +31,25 @@ public:
             cout << "Author: " << author << endl;
             cout << "Year: " << year << endl;
         }
-        ~book()
-        {
-            cout << "Книга удалена! " << endl;
-        }
+       
     private:
         string name;
         string author;
         int year;
     };
-    book obj;
+   
     void get_vec()
     {
         for (auto const& element : vecbooks)
         {
+            book obj;
              obj.get_info();
         }
     }
 
     void add_vec()
     {
-        vecbooks.push_back(obj);
+        vecbooks.push_back(book());
     }
   
 private:
