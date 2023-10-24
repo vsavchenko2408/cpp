@@ -1,0 +1,4 @@
+﻿  Source.cpp
+D:\My Projects\minvalue\minvalue\Source.cpp(10,10): warning C4305: инициализация: усечение из "__int64" в "int"
+D:\My Projects\minvalue\minvalue\Source.cpp(10,12): warning C4309: инициализация: усечение константного значения
+  minvalue.vcxproj -> D:\My Projects\minvalue\x64\Debug\minvalue.exe
