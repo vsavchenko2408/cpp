@@ -1,0 +1,3 @@
+﻿  Source.cpp
+E:\My Projects\guessnumber\guessnumber\Source.cpp(28,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  guessnumber.vcxproj -> E:\My Projects\guessnumber\x64\Debug\guessnumber.exe
