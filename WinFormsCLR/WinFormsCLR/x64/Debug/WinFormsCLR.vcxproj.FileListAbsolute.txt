@@ -1,0 +1,4 @@
+E:\My Projects\WinFormsCLR\WinFormsCLR\x64\Debug\WinFormsCLR.vcxproj.AssemblyReference.cache
+E:\My Projects\WinFormsCLR\WinFormsCLR\x64\Debug\WinFormsCLR.vcxproj.SuggestedBindingRedirects.cache
+E:\My Projects\WinFormsCLR\WinFormsCLR\x64\Debug\WinFormsCLR.MyForm.resources
+E:\My Projects\WinFormsCLR\WinFormsCLR\x64\Debug\WinFormsCLR.vcxproj.GenerateResource.cache
