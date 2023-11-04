@@ -1,0 +1,3 @@
+D:\My Projects\MyCalc\MyCalc\x64\Release\MyCalc.vcxproj.AssemblyReference.cache
+D:\My Projects\MyCalc\MyCalc\x64\Release\MyCalc.MyForm.resources
+D:\My Projects\MyCalc\MyCalc\x64\Release\MyCalc.vcxproj.GenerateResource.cache

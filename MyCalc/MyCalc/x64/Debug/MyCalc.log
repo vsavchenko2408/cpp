@@ -1,3 +1,10 @@
 ﻿  MyForm.cpp
+D:\My Projects\MyCalc\MyCalc\MyForm.h(440,13): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+D:\My Projects\MyCalc\MyCalc\MyForm.h(444,34): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+D:\My Projects\MyCalc\MyCalc\MyForm.h(445,34): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+D:\My Projects\MyCalc\MyCalc\MyForm.h(446,34): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+D:\My Projects\MyCalc\MyCalc\MyForm.h(447,43): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+D:\My Projects\MyCalc\MyCalc\MyForm.h(456,25): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+D:\My Projects\MyCalc\MyCalc\MyForm.h(472,10): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
   MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
-  MyCalc.vcxproj -> E:\My Projects\MyCalc\x64\Debug\MyCalc.exe
+  MyCalc.vcxproj -> D:\My Projects\MyCalc\x64\Debug\MyCalc.exe

@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\My Projects\MyCalc\x64\Debug\MyCalc.exe</FullPath>
+      <FullPath>D:\My Projects\MyCalc\x64\Release\MyCalc.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
