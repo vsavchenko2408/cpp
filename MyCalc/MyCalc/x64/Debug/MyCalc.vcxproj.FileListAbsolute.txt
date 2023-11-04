@@ -1,0 +1,4 @@
+E:\My Projects\MyCalc\MyCalc\x64\Debug\MyCalc.vcxproj.AssemblyReference.cache
+E:\My Projects\MyCalc\MyCalc\x64\Debug\MyCalc.vcxproj.SuggestedBindingRedirects.cache
+E:\My Projects\MyCalc\MyCalc\x64\Debug\MyCalc.MyForm.resources
+E:\My Projects\MyCalc\MyCalc\x64\Debug\MyCalc.vcxproj.GenerateResource.cache
