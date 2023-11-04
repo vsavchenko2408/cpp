@@ -38,6 +38,9 @@ namespace WinFormsCLR {
 	private: System::Windows::Forms::Button^ ClickMe_Button;
 	private: System::Windows::Forms::CheckBox^ checkBox;
 	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::ServiceProcess::ServiceController^ serviceController1;
+	private: System::Windows::Forms::CheckBox^ checkBox1;
+	private: System::Windows::Forms::Button^ button1;
 	protected:
 
 
@@ -62,6 +65,9 @@ namespace WinFormsCLR {
 			this->ClickMe_Button = (gcnew System::Windows::Forms::Button());
 			this->checkBox = (gcnew System::Windows::Forms::CheckBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->serviceController1 = (gcnew System::ServiceProcess::ServiceController());
+			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -103,11 +109,32 @@ namespace WinFormsCLR {
 			this->textBox1->TabIndex = 3;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
 			// 
+			// checkBox1
+			// 
+			this->checkBox1->AutoSize = true;
+			this->checkBox1->Location = System::Drawing::Point(134, 241);
+			this->checkBox1->Name = L"checkBox1";
+			this->checkBox1->Size = System::Drawing::Size(80, 17);
+			this->checkBox1->TabIndex = 4;
+			this->checkBox1->Text = L"checkBox1";
+			this->checkBox1->UseVisualStyleBackColor = true;
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(134, 288);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->TabIndex = 5;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(435, 294);
+			this->ClientSize = System::Drawing::Size(439, 508);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->checkBox);
 			this->Controls->Add(this->ClickMe_Button);
