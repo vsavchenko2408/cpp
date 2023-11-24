@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1700859724 source:/home/master/cpp/CBproject/main.cpp
+	<iostream>
+	"MyClass.h"
+
+1700861001 /home/master/cpp/CBproject/include/MyClass.h
+	<iostream>
+
