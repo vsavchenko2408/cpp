@@ -1,4 +1,0 @@
-E:\My Projects\winformscpp\winformscpp\x64\Debug\winformscpp.vcxproj.AssemblyReference.cache
-E:\My Projects\winformscpp\winformscpp\x64\Debug\winformscpp.vcxproj.SuggestedBindingRedirects.cache
-E:\My Projects\winformscpp\winformscpp\x64\Debug\winformscpp.MyForm.resources
-E:\My Projects\winformscpp\winformscpp\x64\Debug\winformscpp.vcxproj.GenerateResource.cache

@@ -1,4 +1,0 @@
-﻿  MyForm.cpp
-E:\My Projects\winformscpp\winformscpp\MyForm.cpp(8,1): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
-  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
-  winformscpp.vcxproj -> E:\My Projects\winformscpp\x64\Debug\winformscpp.exe
