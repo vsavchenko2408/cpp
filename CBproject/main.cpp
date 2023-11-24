@@ -15,6 +15,6 @@ return b;
 int main()
 {
 
-cout << MyFoo('F',400);
+cout << MyFoo('F',4);
     return 0;
 }
