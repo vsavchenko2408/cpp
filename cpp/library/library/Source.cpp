@@ -9,7 +9,7 @@ using std::string;
 class book
 {	
 	public:
-void created_book()
+book()
 {
 	cout << "Input name of the book: " << endl;
 	cin >> name;
@@ -20,9 +20,9 @@ void created_book()
 }
 void show_book()
 {
-	cout << "Name Book: " << "/t" << name << endl;
-	cout << "Author: " << "/t" << author << endl;
-	cout << "Year: " << "/t" << year << endl;
+	cout << "Name Book: " << name << endl;
+	cout << "Author: " << author << endl;
+	cout << "Year: " << year << endl;
 }
 void del_book()
 	{
