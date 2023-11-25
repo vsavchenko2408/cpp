@@ -7,8 +7,8 @@
             ],
             "defines": [],
             "cStandard": "c17",
-            "compilerPath": "/usr/bin/clang-17",
-            "cppStandard": "c++17"
+            "compilerPath": "/usr/bin/clang-14",
+            "cppStandard": "c++14"
         }
     ],
     "version": 4

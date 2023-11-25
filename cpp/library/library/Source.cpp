@@ -1,33 +1,30 @@
-/*
-Задание 4:
-Создайте программу для учета библиотечных книг. Реализуйте классы Book и Library.
-Класс Book должен содержать информацию о названии, авторе и годе издания книги.
-Класс Library должен содержать список книг и методы для добавления, удаления и поиска книг в библиотеке.
-*/
 #include <iostream>
-using namespace std;
-class library
-{
-public:
-	
-private:
-
-};
+#include <vector>
+using std::cout;
+using std::endl;
+using std::cin;
+using std::vector;
+using std::string;
 
 class book
+{	
+	public:
+void created_book()
 {
-	friend class library;
-public:
-	book()
-	{
-		cout << "Введите название книги: " << endl;
-		cin >> name;
-		cout << "Введите автора книги: " << endl;
-		cin >> autor;
-		cout << "Введите год издания книги: " << endl;
-		cin >> year;
-	}
-	void del_book()
+	cout << "Input name of the book: " << endl;
+	cin >> name;
+	cout << "Input Author: " << endl;
+	cin >> author;
+	cout << "Input year: " << endl;
+	cin >> year;
+}
+void show_book()
+{
+	cout << "Name Book: " << "/t" << name << endl;
+	cout << "Author: " << "/t" << author << endl;
+	cout << "Year: " << "/t" << year << endl;
+}
+void del_book()
 	{
 		
 		
@@ -35,14 +32,28 @@ public:
 
 private:
 	string name;
-	string autor;
+	string author;
 	short int year;
 };
+
+class library
+{
+public:
+	
+private:
+
+	
+
+};
+
+
 int main()
 {
-	setlocale(LC_ALL, "RU");
+	//setlocale(LC_ALL, "RU");
 
-
+book obj;
+obj.created_book();
+obj.show_book();
 
 
 	return 0;
