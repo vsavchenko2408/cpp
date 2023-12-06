@@ -5,10 +5,10 @@ class Tasks
 {
     public:
 void new_task(std::string nm,bool st)
-{
-name = nm;
-status = st;
-}
+    {
+    name = nm;
+    status = st;
+    }
 
 
 

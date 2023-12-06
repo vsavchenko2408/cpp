@@ -7,8 +7,24 @@
             ],
             "defines": [],
             "cStandard": "c17",
-            "compilerPath": "/usr/bin/g++",
-            "cppStandard": "c++14"
+            "compilerPath": "C:/MinGW/bin/c++.exe",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "windows-clang-x64"
+        },
+        {
+            "name": "Windows",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "intelliSenseMode": "${default}",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "compilerPath": "C:\\MinGW\\bin\\c++"
         }
     ],
     "version": 4
