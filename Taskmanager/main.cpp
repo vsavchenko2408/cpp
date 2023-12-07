@@ -36,7 +36,7 @@ void complete_task()
 }
 void del_task()
 {
-    Tasks::~Tasks();
+    delete this;
 }
 void show_tasks()
     {
@@ -57,6 +57,9 @@ bool status;
 int main()
 {
     vector<Tasks> VecTask;
+    int action;
+do
+{
 cout << "\t\tПрограмма Список задач." << endl;
 cout << "\tВведите действие: " << endl;
 cout << "1. Добавить новую задачу " << endl;
@@ -65,8 +68,7 @@ cout << "3. Вывести список задач " << endl;
 cout << "4. Удалить выполенные задачи " << endl;
 cout << "0. Выход из программы " << endl;
 
-
-int action;
+cin >> action;
 switch (action)
 {
     case 1:
@@ -79,17 +81,20 @@ switch (action)
         VecTask[task].complete_task();
         break;
     case 3:
-        for(int i=0; i < VecTask.end(); i++)
+        for(int i=0; i < VecTask.size(); i++)
         {
-        cout << VecTask[i].show_tasks() << endl;
+        VecTask[i].show_tasks();
+        }
+        break;
+    case 4:
+        for(auto elem: VecTask)
+        {
+            
         }
 
-
-default:
-    break;
 }
-
-
+    }
+    while(action != 0);
 
 
 
@@ -100,7 +105,7 @@ VecTask[0].complete_task();
 VecTask[0].show_tasks();
 VecTask[0].del_task();
 //VecTask.push_back(Tasks::new_task("Buy food", false));
-    std::cout << "Everything is OK!" << std::endl;
+    
     */
     return 0;
 }
