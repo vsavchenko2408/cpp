@@ -7,7 +7,7 @@
             ],
             "defines": [],
             "cStandard": "c17",
-            "compilerPath": "/usr/bin/gcc",
+            "compilerPath": "c:/MinGW/bin/c++.exe",
             "cppStandard": "c++14",
             "intelliSenseMode": "windows-clang-x64"
         },

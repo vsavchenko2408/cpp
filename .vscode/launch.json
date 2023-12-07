@@ -8,14 +8,14 @@
             "name": "(gdb) Запуск канала",
             "type": "cppdbg",
             "request": "launch",
-            "program": "Введите имя программы, например: ${workspaceFolder}/a.exe",
+            "program": "/a.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
             "pipeTransport": {
-                "debuggerPath": "/usr/bin/gdb",
+                "debuggerPath": "c:/MinGW/bin/c++.exe",
                 "pipeProgram": "<Полный путь к программе канала, например: plink.exe>",
                 "pipeArgs": [],
                 "pipeCwd": ""

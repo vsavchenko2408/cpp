@@ -43,7 +43,7 @@ void show_tasks()
     cout << "Task : " << name << endl;
     cout << "Complete status: " << status << endl;
     }   
-private:
+
 std::string name;
 bool status;
 };
@@ -87,9 +87,11 @@ switch (action)
         }
         break;
     case 4:
-        for(auto elem: VecTask)
+        for(int j=0; j < VecTask.size(); j++)
         {
-            
+            if(!VecTask[j].status)
+            {VecTask[j].del_task();}
+            cout << "Выполенные задачи удалены " << endl;
         }
 
 }

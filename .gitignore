@@ -21,3 +21,6 @@ json
 .vscode
 .json
 /vscode
+/json
+./json
+/.json
