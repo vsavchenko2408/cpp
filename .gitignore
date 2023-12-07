@@ -17,3 +17,7 @@ x32/
 
 json
 .json
+
+.vscode
+.json
+/vscode
