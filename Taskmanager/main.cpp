@@ -22,7 +22,7 @@ class Tasks
     {
     cout << "Destructor" << endl;
     }
-void new_task(std::string nm,bool st)
+    Tasks(std::string nm,bool st)
     {
     name = nm;
     status = st;
@@ -57,11 +57,43 @@ bool status;
 int main()
 {
     vector<Tasks> VecTask;
+cout << "\t\tПрограмма Список задач." << endl;
+cout << "\tВведите действие: " << endl;
+cout << "1. Добавить новую задачу " << endl;
+cout << "2. Пометить задачу как выполненную " << endl;
+cout << "3. Вывести список задач " << endl;
+cout << "4. Удалить выполенные задачи " << endl;
+cout << "0. Выход из программы " << endl;
+
+
+int action;
+switch (action)
+{
+    case 1:
+        VecTask.push_back(Tasks());
+        break;
+    case 2:
+        cout << "Введите номер задачи: " << endl;
+        int task;
+        cin >> task;
+        VecTask[task].complete_task();
+        break;
+    case 3:
+        for(int i=0; i < VecTask.end(); i++)
+        {
+        cout << VecTask[i].show_tasks() << endl;
+        }
+
+
+default:
+    break;
+}
 
 
 
 
-    
+
+
     /*
 VecTask.push_back(Tasks());
 VecTask[0].complete_task();
