@@ -1,6 +1,12 @@
 #include <iostream>
 #include <vector>
 
+using std::cout;
+using std::endl;
+using std::cin;
+using std::vector;
+
+
 class Tasks
 {
     public:
@@ -9,10 +15,11 @@ void new_task(std::string nm,bool st)
     name = nm;
     status = st;
     }
-
-
-
-
+void show_tasks()
+    {
+    cout << "Task : " << name << endl;
+    cout << "Complete status: " << status << endl;
+    }   
 private:
 std::string name;
 bool status;
@@ -26,6 +33,9 @@ bool status;
 
 int main()
 {
+    vector<Tasks> VecTask;
+VecTask.push_back();
+
     std::cout << "Everything is OK!" << std::endl;
     return 0;
 }
