@@ -56,6 +56,7 @@ bool status;
 
 int main()
 {
+    setlocale(LC_ALL,"RU");
     vector<Tasks> VecTask;
     int action;
 do
