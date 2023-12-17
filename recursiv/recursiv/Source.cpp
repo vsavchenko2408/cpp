@@ -14,9 +14,9 @@ void foo(int count)
 		return;
 	}
 }
-void main()
+int main()
 {
 	cout << "test" << endl;
 	foo(10);
-
+return 0;
 }
