@@ -17,6 +17,7 @@ class gun: public weapon
 void shoot() override
 {
 cout << "Bang! " << endl;
+
 }
 };
 class machinegun: public weapon
@@ -24,6 +25,7 @@ class machinegun: public weapon
 void shoot() override
 {
     cout << "bangbangbang! " << endl;
+
 }
 };
 class player
@@ -32,24 +34,46 @@ class player
    void shoot(weapon *weapon) 
     {
         weapon->shoot();
-    }   
+    }  
+void hit()
+{
+    if(armor>0)
+    {
+        armor -=10;
+    }
+    if(armor==0)
+    {
+        health -=10;
+    }
+    else if(health <=10)
+    {
+        death();
+    }
+health -= 10;
+
+}
+void death()
+{
+    ~player()
+    {
+        delete &player;
+    }
+}
+    private:
+    short health;
+    short armor; 
 };
 
 
 int main()
 {
-    list<weapon> ListWeapons;
+    
 
 player one;
+player two;
 gun pistol;
 machinegun mp4;
-ListWeapons.emplace_back(pistol);
-ListWeapons.emplace_back(mp4);
-list<weapon>::iterator itlist = ListWeapons.begin();
-for(itlist; itlist != ListWeapons.end();itlist++)
-{
-one.shoot(&pistol);
-one.shoot(&mp4);
-}
+
+
     return 0;
 }
