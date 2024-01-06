@@ -10,11 +10,13 @@
 void clearScreen() {
     system(CLEAR_SCREEN);
 }
+
 using std::string;
 using std::cout;
 using std::cin;
 using std::endl;
 template<typename T>
+
 class SmartPointer
 {
 public:
@@ -42,16 +44,14 @@ T *ptr;
 
 int main()
 {
-//SmartPointer<int> sp1 = new int(5);
-//SmartPointer<int> sp2 = sp1;
+     int SIZE = 5;
+     int *arr = new int[SIZE] {4,6,2,8,9};
+std::shared_ptr<int> ptr(arr);
 
-//cout << *sp1 << endl;
-std::unique_ptr<int> up1(new int(5));
-std::unique_ptr<int> up2;
+cout << *ptr;
 
-up2.swap(up1);
-
-clearScreen();
-
+//clearScreen();
+int a;
+cin >> a;
     return 0;
 }
