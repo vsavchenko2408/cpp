@@ -1,4 +1,16 @@
 #include <iostream>
+#include <memory>
+#include <string>
+#ifdef _WIN32
+    #define CLEAR_SCREEN "cls"
+#else
+    #define CLEAR_SCREEN "clear"
+#endif
+
+void clearScreen() {
+    system(CLEAR_SCREEN);
+}
+using std::string;
 using std::cout;
 using std::cin;
 using std::endl;
@@ -30,9 +42,16 @@ T *ptr;
 
 int main()
 {
-SmartPointer<int> pointer = new int(5);
-cout << *pointer << endl;
+//SmartPointer<int> sp1 = new int(5);
+//SmartPointer<int> sp2 = sp1;
 
+//cout << *sp1 << endl;
+std::unique_ptr<int> up1(new int(5));
+std::unique_ptr<int> up2;
+
+up2.swap(up1);
+
+clearScreen();
 
     return 0;
 }
