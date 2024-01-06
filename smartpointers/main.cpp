@@ -46,12 +46,12 @@ int main()
 //SmartPointer<int> sp2 = sp1;
 
 //cout << *sp1 << endl;
-std::unique_ptr<int> up1(new int(5));
-std::unique_ptr<int> up2;
+//std::unique_ptr<int> up1(new int(5));
+//std::unique_ptr<int> up2;
+//up2.swap(up1);
 
-up2.swap(up1);
+
 
 clearScreen();
-
-    return 0;
+return 0;
 }
