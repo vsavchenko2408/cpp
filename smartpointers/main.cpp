@@ -44,14 +44,16 @@ T *ptr;
 
 int main()
 {
-     int SIZE = 5;
-     int *arr = new int[SIZE] {4,6,2,8,9};
-std::shared_ptr<int> ptr(arr);
+//SmartPointer<int> sp1 = new int(5);
+//SmartPointer<int> sp2 = sp1;
 
-cout << *ptr;
+//cout << *sp1 << endl;
+std::unique_ptr<int> up1(new int(5));
+std::unique_ptr<int> up2;
 
-//clearScreen();
-int a;
-cin >> a;
+up2.swap(up1);
+
+clearScreen();
+
     return 0;
 }
