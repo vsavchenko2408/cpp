@@ -12,7 +12,7 @@ void myswap(int &a, int &b)
 void feelarr(int arr[], int N);
 void showarr(int arr[], int N);
 void sortarr(int arr[], int N);
-
+void reversesortarr(int arr[], int N);
 int main()
 {
 srand(time_t(NULL));
@@ -21,8 +21,11 @@ int *arr = new int[N];
 feelarr(arr, N);
 showarr(arr, N);
 sortarr(arr,N);
-cout << "Array is Sorted " << endl;
+cout << "Array is Sorted: " << endl;
 showarr(arr,N);
+cout << "Reverse sorted: " << endl;
+reversesortarr(arr, N);
+showarr(arr, N);
 delete[] arr;
     return 0;
 }
@@ -32,6 +35,17 @@ void sortarr(int arr[], int N)
     {
         for(int j=0;j<N;j++)
         if(arr[i]<arr[j])
+        {
+            myswap(arr[i],arr[j]);    
+        }
+    }
+}
+void reversesortarr(int arr[], int N)
+{
+    for(int i=0;i<N;i++)
+    {
+        for(int j=0;j<N;j++)
+        if(arr[i]>arr[j])
         {
             myswap(arr[i],arr[j]);    
         }
