@@ -6,12 +6,17 @@ using std::endl;
 int main()
 {
 
-float f = 3.9f;
-float i = static_cast<double>(f)+4.2;
+int a = 5;
+int b = 6;
+float abc = a/b;
+cout << abc << endl;
+
+double db = 4.2;
+int i;
+
+i = static_cast<int>(db);
+
 cout << i << endl;
-
-
-
 
     return 0;
 }
