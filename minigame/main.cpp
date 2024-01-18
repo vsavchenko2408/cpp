@@ -2,7 +2,7 @@
 // приключенческая игра с использованием switch
 #include <iostream>
 using namespace std;
-#include <ncurses.h> // для getche()
+#include <conio.h> // для getche()
 int main()
 {
     char dir = 'a';
@@ -11,7 +11,7 @@ while(dir != '\r')
 {
 cout << "\nВаши координаты: " << x << ", " << y;
 cout << "\nВыберите направление (w, s, d, a): ";
-dir = getch(); // ввод переменной
+dir = getche(); // ввод переменной
 switch(dir) // switch c переменнной dir
 {
 case 'w': y--; break; // движение на север
