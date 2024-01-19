@@ -31,7 +31,7 @@ while(step != '\r')
         x++;
         break;
         case '\r':
-        exit();
+        exit(0);
         default:
         cout << "Error input, try again " << endl;
     }
