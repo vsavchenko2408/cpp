@@ -1,6 +1,6 @@
 #include <iostream>
 #include <random>
-#include <windows.h>
+//#include <windows.h>
 #include <algorithm>
 using std::cout;
 using std::cin;
@@ -16,11 +16,11 @@ int main()
 {
 	setlocale(LC_ALL, "RU");
 	srand(time(NULL));
-	const int N = 50;
+	const int N = 5;
 	float* arr = new float[N];//создание массива в динамической памяти
 	fill_array(arr, N);//заполнение массива
 	show_array(arr, N);//вывод массива
-	cout << "Массива отсортирован!" << endl;
+	cout << "Массив отсортирован!" << endl;
 	My_Sort(arr, N); //сортировка массива
 	show_array(arr, N);//вывод массива
 	cout << "Количество операций при сортировке: " << count << endl;
