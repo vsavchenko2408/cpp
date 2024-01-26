@@ -19,15 +19,26 @@ for(int i = 0;i<VER;i++)
     {
     for(int j = 0;i<GOR;j++)
         {
-            cout << "#" ;
+            cout << map_arr[i][j] ;
         } 
         cout << "\n";
     }
 }
+void fill_map()
+{
+ for(int i = 0;i<VER;i++)
+    {
+    for(int j = 0;i<GOR;j++)
+        {
+           map_arr[i][j] = '#';
+        } 
+    }
+}   
+
 private:
-const int VER = 10;
-const int GOR = 10;
-char arrmap[][];
+ const int VER = 10;
+ const int GOR = 10;
+ char map_arr[VER][GOR];
 
 
 };
