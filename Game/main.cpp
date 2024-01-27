@@ -7,8 +7,7 @@ using std::endl;
 int main()
 {
 Map new_map;
-new_map.fill_map();
-new_map.draw_map();
+new_map.draw();
 
 
     return 0;
