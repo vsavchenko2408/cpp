@@ -2,18 +2,19 @@
 using std::cout;
 using std::cin;
 using std::endl;
-class MyClass
+enum Days
 {
-public:
-int y;
-private:
-int x;
+    monday,
+    tuesday,
+    wednesday
 };
 
 int main()
 {
-    MyClass MyCl;
-    MyCl::MyCl.y = 10;
+    Days week;
+    week = Days::monday;
+
+
 
     return 0;
 }
