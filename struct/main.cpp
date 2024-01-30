@@ -1,12 +1,12 @@
 #include <iostream>
-#include "MyStruct.h"
-using namespace std;
+using std::cout;
+using std::cin;
+using std::endl;
+
 
 int main()
 {
-MyStruct test;
-test.set(15,20);
-test.show();
+
 
     return 0;
 }
