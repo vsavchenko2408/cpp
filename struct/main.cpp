@@ -7,19 +7,16 @@ using std::string;
 
 struct human
 {
-string name;
-unsigned int age;
-unsigned int weight;
-unsigned int height;
-int id = 100;
+double d;
+int a;
 };
 
 int main()
 {
 
 human man;
-cout << sizeof(human) << endl;
-cout << sizeof(man) << endl;
+cout << "Human: " << sizeof(human) << endl;
+cout << "Man: " << sizeof(man) << endl;
 
     return 0;
 }
