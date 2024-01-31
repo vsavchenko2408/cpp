@@ -7,9 +7,10 @@ using std::string;
 
 struct human
 {
-
-char a;
 double d;
+char a;
+char b;
+
 };
 
 int main()
