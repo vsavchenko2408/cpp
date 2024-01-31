@@ -7,8 +7,9 @@ using std::string;
 
 struct human
 {
+
+char a;
 double d;
-int a;
 };
 
 int main()
