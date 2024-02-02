@@ -17,7 +17,7 @@ std::cout << "Health: " << health << std::endl;
 std::cout << "Armour: " << armour << std::endl;
 std::cout << "Anmo: " << ammo << std::endl;
 }
-void set_coor(char move)
+void move(char move)
 {
 switch(move)
 {
@@ -37,19 +37,23 @@ default:
     std::cout << "Wrong input" << std::endl;
 }    
 }
-void get_coor()
+int get_x()
 {
-std::cout << "X: " << this->x << std::endl;
-std::cout << "Y: " << this->y << std::endl;
+return x;
 }
+int get_y()
+{
+return y;
+}
+
 ~Player()
 {
-    
+  std::cout << "Player destructor! " << std::endl;  
 }
 
 private:
-short x;
-short y;
+int x;
+int y;
 int health;
 int armour;
 int ammo;
