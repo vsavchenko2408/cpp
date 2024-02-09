@@ -10,10 +10,10 @@ srand(time_t(NULL));
 const int N = 100;
 int* arr = new int[N];
 
-std::ofstream myfile("config.txt", std::ios_base::out);
+std::ofstream myfile("config.txt", std::ios_base::in);
 //myfile.open("config.txt");
 //std::ofstream myfile("config.txt");
-if(myfile.is_open())
+/*if(myfile.is_open())
     {
         cout << "File open!" << endl;
         //myfile << "Test" << endl;
@@ -28,6 +28,7 @@ else
 {
    cout << "File is not open! " << endl;
 }
+*/
 myfile.close();
 cout << "File is close " << endl;
 
