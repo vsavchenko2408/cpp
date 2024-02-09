@@ -1,24 +1,21 @@
 #include <iostream>
 using namespace std;
-static int i=0;
 
-void foo()
+int foo(int i)//рекурсивная функция
 {
     i++;
-    cout << i << endl;
-    if(i == 100)
+    if(i<=5)
     {
-    return;
-    }
-    else
-    {
-    foo();
-        }
+        cout << "Enter recursive foo " << i << endl;
+        foo(i);// Вход в рекурсивную функцию
+        cout << "Exit recursive foo :" << i << endl; //выход из рекурсии
+    }  
+    return i; 
 }
 int main()
 {
-
-foo();
-cout << sizeof(foo());
+int i = 0;  
+int b = foo(i);
+cout << "B = " << b << endl;
     return 0;
 }

@@ -45,7 +45,7 @@ int main()
 
         cout << "Your coordinates: " << x << ", " << y << endl;
         cout << "Input side (w.a.s.d) " << endl;
-        step = _getche();
+        step = getche();
 
         // сохраняем текущие координаты
         int prevX = x;
