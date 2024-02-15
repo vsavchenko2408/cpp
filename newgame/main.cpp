@@ -6,7 +6,7 @@ using std::endl;
 
 int main()
 {
-
+Player pl;
 
 
     return 0;

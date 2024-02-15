@@ -14,5 +14,6 @@ public:
 
 private:
 coord cor;
-
+int health;
+int armour;
 };
