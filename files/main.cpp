@@ -54,6 +54,6 @@ for(int j=0;j<N;j++)
     cout << arr_in[j]<< endl;
 }
 delete[] arr_in;
-
+getchar();
     return 0;
 }
