@@ -1,59 +1,62 @@
 #include <iostream>
 #include <fstream>
+#include <random>
+
 using std::cout;
 using std::endl;
 using std::cin;
 
 int main()
 {
-srand(time_t(NULL));
-const int N = 100;
-int* arr_out = new int[N];
+    srand(time(NULL));
+const int N = 50;
+int* arr = new int[N];
 
-std::ofstream myfile("config.txt", std::ios_base::out);
-//myfile.open("config.txt");
-
-if(myfile.is_open())
-    {
-        cout << "File open!" << endl;
-        //myfile << "Test" << endl;
+std::ifstream file;
+file.open("file.txt");
+if(file.is_open())
+{
+    cout << "File is open!" << endl;
     for(int i=0;i<N;i++)
-        {
-        arr_out[i] = rand()%999;
-       
-        myfile << arr_out[i] << endl;
-        }
+    {
+
+       file >> arr[i];
+        cout << arr[i] << endl;
     }
+}
 else
 {
-   cout << "File is not open! " << endl;
+std::cerr << "File not found" << endl; 
 }
-delete[] arr_out;
-myfile.close();
-cout << "/////////////////////////// " << endl;
+file.close();
 
-std::ifstream inputfile("config.txt");
-int* arr_in = new int[N];
 
-if(inputfile.is_open())
+std::ofstream newfile;
+newfile.open("newfile.txt");
+if(newfile.is_open())
 {
-    cout << "File open for read to array! " << endl;
+    cout << "File is open! " << endl;
 for(int i=0;i<N;i++)
 {
-    inputfile >> arr_in[i];
+    newfile << arr[i] << endl;
 }
 }
 else
 {
-cout << "Unable to read file! " << endl;
+std::cerr << "File corrupt!" << endl;
 }
-inputfile.close();
 
+<<<<<<< HEAD
 for(int j=0;j<N;j++)
 {
     cout << arr_in[j]<< endl;
 }
 delete[] arr_in;
 getchar();
+=======
+newfile.close();
+
+delete[] arr;
+>>>>>>> d7342ef92e020d9c9b06244df2a59de1febbfd68
     return 0;
 }
