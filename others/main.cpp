@@ -10,6 +10,13 @@ class MyClass
   std::cout << "Constructor " << this << std::endl;
   ++count;
   }
+  MyClass(const MyClass &other)
+  {
+    ++count;
+int* a = new int;
+*this->a = *a;
+std::cout << "Constructor " << this << std::endl;
+  }
   ~MyClass()
   {
       --count;
