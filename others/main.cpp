@@ -1,23 +1,32 @@
-
 #include <iostream>
-static int count=0;
-class MyClass
+static int count=0;// счетчик обьектов
+
+class MyClass//создаем наш класс
 {
   public:
-  MyClass(int a)
+  MyClass()//конструктор по умолчанию
+  {
+    std::cout << "Default Constructor " << this << std::endl;
+    ++count; 
+  }
+  MyClass(int a)//конструктор с одним параметром
   {
       *this->a = a;
   std::cout << "Constructor " << this << std::endl;
   ++count;
   }
-  MyClass(const MyClass &other)
+
+
+  MyClass(const MyClass &other)//конструктор копирования
   {
     ++count;
 int* a = new int;
 *this->a = *a;
 std::cout << "Constructor " << this << std::endl;
   }
-  ~MyClass()
+
+
+  ~MyClass()//деструктор
   {
       --count;
       delete a;
@@ -25,16 +34,16 @@ std::cout << "Constructor " << this << std::endl;
       std::cout << "Destructor " << this << std::endl;
       std::cout << "Count = " << count << std::endl;
   }
-    private:
+
+private:
     int* a = new int;
     
 };
-
 
 int main() {
 MyClass x(15);
 MyClass y(x);
 
-//std::cout << "Count = " << count << std::endl;
+std::cout << "Count = " << count << std::endl;
     return 0;
 }
