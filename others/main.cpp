@@ -4,6 +4,7 @@ static int count=0;
 class MyClass
 {
   public:
+  MyClass(){}
   MyClass(int a)
   {
       *this->a = a;
@@ -33,7 +34,7 @@ std::cout << "Constructor " << this << std::endl;
 
 int main() {
 MyClass x(15);
-MyClass y(x);
+
 
 //std::cout << "Count = " << count << std::endl;
     return 0;
