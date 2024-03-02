@@ -13,11 +13,11 @@ cout << arr[i] << endl;
 }
 */
 
-short arr[] = {1,2,3,4};
+short arr[4] = {1,2,3,4};
 for(int i=0;i<8;i++)
 {
     
-cout << arr[i] = 0 ;
+cout << arr[i] << endl ;
 }
 
 
