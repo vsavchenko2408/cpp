@@ -25,7 +25,7 @@ json
 ./json
 /.json
 
-.exe
+*.exe
 exe
-.out
+*.out
 out
