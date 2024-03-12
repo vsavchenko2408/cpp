@@ -13,11 +13,33 @@ void operator-(Oper& obj);//перегрузка оператора вычита
 Oper operator=(Oper& obj);//перегрузка оператора присваивания
 bool operator>(Oper& obj);//Перегрузка оператора больше
 bool operator<(Oper& obj);//перегрузка оператора меньше
-
-
 bool operator==(Oper& obj); //перегрузка оператора равно
 bool operator!=(Oper& obj); //перегрузка оператора неравно
 
+friend std::ostream& operator<<(std::ostream& os,const Oper& obj)//перегрузка оператора вывода
+{
+os << "x: " << obj.x << ' ' << endl;
+os << "y: " << obj.y << ' ' << endl;
+return os;
+}
+/*
+friend std::istream& operator>>(std::istream& is,const Oper& obj)//перегрузка оператора ввода
+{
+cout << "Input x: " << endl;
+is >> obj.x ;
+cout << "Input y: " << endl;
+is >>  obj.y ;
+return is;
+}
+*/
+friend std::istream& operator>>(std::istream& is, Oper& obj)
+{
+    std::cout << "Input x: " << std::endl;
+    is >> obj.x;
+    std::cout << "Input y: " << std::endl;
+    is >> obj.y;
+    return is;
+}
 
 void show();//метод вывода
 
@@ -30,14 +52,17 @@ int main()
 {
 
 Oper a(5,4);
-Oper b(4,6);
-bool t;
-t = a > b; // присваивание объекта "а" объекту "в"
-cout << t << endl;
-//a.show(); // вывод результата
+Oper b;
+std::cin >> b;
+cout << b << endl;
+
+
 
     return 0;
 }
+
+
+
 
 //тела методов
 Oper::Oper(int _x, int _y)
@@ -98,3 +123,30 @@ Oper Oper::operator=(Oper& obj)
     }
 return obj;
 }
+bool Oper::operator==(Oper& obj)
+{
+if(this->x == obj.x || this->y == obj.y)
+{
+     return  true;
+}
+else
+    
+{
+    return false;
+}
+}
+
+bool Oper::operator!=(Oper& obj)
+{
+
+if(this->x != obj.x || this->y != obj.y) 
+{
+    return  true;
+}
+else
+{
+     return false;
+ }
+}
+
+
