@@ -15,6 +15,8 @@ bool operator>(Oper& obj);//Перегрузка оператора больше
 bool operator<(Oper& obj);//перегрузка оператора меньше
 bool operator==(Oper& obj); //перегрузка оператора равно
 bool operator!=(Oper& obj); //перегрузка оператора неравно
+Oper operator++(); //перегрузка оператора префиксного инкремента
+Oper operator++(int); //перегрузка оператора постфиксного инкремента
 
 friend std::ostream& operator<<(std::ostream& os,const Oper& obj)//перегрузка оператора вывода
 {
@@ -52,11 +54,10 @@ int main()
 {
 
 Oper a(5,4);
-Oper b;
-std::cin >> b;
-cout << b << endl;
-
-
+//++a;
+a.show();
+a++;
+a.show();
 
     return 0;
 }
@@ -149,4 +150,20 @@ else
  }
 }
 
+Oper Oper::operator++()
+{
+this->x++;
+this->y++;
+return *this;
+}
 
+Oper Oper::operator++(int)
+{
+    Oper temp;
+    temp = *this;
+this->x++;
+this->y++;
+
+
+return temp;
+}
