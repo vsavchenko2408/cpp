@@ -2,43 +2,75 @@
 using std::cout;
 using std::endl;
 using std::string;
-class Animals
+static int count=0;
+class Grandfather
 {
 public:
-void SetVoice(string voice)
+Grandfather()
 {
-    this->voice = voice;
+
+    count++;
+    cout << "Constructor GrandFather " << this << endl;
 }
-string Say()
+
+~Grandfather()
 {
-    return voice;
+    count--;
+    cout << "Destructor GrandFather " << this << endl;
+}
+protected:
+string name;
+unsigned short age;
+};
+
+class Father : protected Grandfather
+{
+public:
+Father()
+{
+    count++;
+    cout << "Constructor Father "<< this  << endl;
+}
+~Father()
+{
+     count--;
+    cout << "Destructor Father " << this << endl;
+}
+protected:
+bool car;
+};
+
+class Son : public Father
+{
+public:
+
+Son()
+{
+    count++;
+    cout << "Constructor Son " << this << endl;
+}
+Son(string name, unsigned short age, bool car)
+{
+this->name = name;
+this->age = age;
+this->car = car;
+}
+~Son()
+{
+     count--;
+    cout << "Destructor Son "<< this  << endl;
 }
 private:
-string voice;
-};
-
-
-class Cat : public Animals
-{
-public:
-bool vibrice;
-
-};
-
-
-
-class Dog : public Animals
-{
-    public:
-string tail;
+bool toys;
 };
 
 int main()
 {
-    Cat cat;
-    cat.SetVoice("meow");
-    cat.vibrice = 20;
-    
+   
+Son human;
+
+
+cout << "Count: " << count << endl;
 
     return 0;
 }
