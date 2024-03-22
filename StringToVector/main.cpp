@@ -10,25 +10,26 @@ using std::string;
 
 int main()
 {
+string str = {"some text"};
 
-vector<char> MyString;
-string str;
-cout << "Enter your string: " << endl;
-cin >> str;
+cout << "Empty length: " << str.length() << endl;
+cout << "Empty capacity: " << str.capacity() << endl;
 
-for(int i =0; i< str.length();i++)
+string::iterator it = str.begin();
+
+cout << "Not empty length: " << str.length() << endl;
+cout << "Not empty capacity: " << str.capacity() << endl;
+
+
+
+for(it;it!=str.end();it++)
 {
-MyString.push_back(str[i]);
-}
-for(auto x:MyString)
-{
-    cout << x << " " ;
+    cout << *it << endl;
 }
 
-char a;
-cin >> a;
 
 
 
+system("pause");
     return 0;
 }
