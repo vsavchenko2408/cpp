@@ -1,44 +1,35 @@
 #include <iostream>
-static int count=0;// счетчик обьектов
+//#include <vector>
+#include <string>
+using std::cout;
+using std::endl;
 
-class MyClass//создаем наш класс
+bool solution(std::string const &str, std::string const &ending)
 {
-  public:
-  MyClass(int a)
-  {
-      *this->a = a;
-  std::cout << "Constructor " << this << std::endl;
-  ++count;
-  }
+char pn_str, lst_str;
+char pn_end, lst_end;
+for(auto i = str.begin(); i != str.end();i++)
+{
+ pn_str = *i;
+ lst_str = *(i-1);
+}
 
-
-  MyClass(const MyClass &other)//конструктор копирования
-  {
-    ++count;
-int* a = new int;
-*this->a = *a;
-std::cout << "Constructor " << this << std::endl;
-  }
-
-
-  ~MyClass()//деструктор
-  {
-      --count;
-      delete a;
-      a = nullptr;
-      std::cout << "Destructor " << this << std::endl;
-      std::cout << "Count = " << count << std::endl;
-  }
-
-private:
-    int* a = new int;
-    
-};
-
+  for(auto i = ending.begin(); i != ending.end();i++)
+{
+  pn_end = *i;
+ lst_end = *(i-1);
+}
+if(ending.empty()){return true;}
+  
+  else if(pn_str == pn_end && lst_str == lst_end){ return true;}
+  
+    return false ;
+  
+    //return true;
+}
 int main() {
-MyClass x(15);
 
+  cout <<   solution("hello", "") << endl;
 
-std::cout << "Count = " << count << std::endl;
     return 0;
 }
