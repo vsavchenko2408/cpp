@@ -1,35 +1,30 @@
 #include <iostream>
-//#include <vector>
+#include <cinttypes>
 #include <string>
 using std::cout;
 using std::endl;
 
-bool solution(std::string const &str, std::string const &ending)
+
+int descendingOrder(int a)
 {
-char pn_str, lst_str;
-char pn_end, lst_end;
-for(auto i = str.begin(); i != str.end();i++)
+int arr[10];
+for(int i=1;i<100;i+10)
 {
- pn_str = *i;
- lst_str = *(i-1);
+  arr[i] = (a/i);
 }
 
-  for(auto i = ending.begin(); i != ending.end();i++)
-{
-  pn_end = *i;
- lst_end = *(i-1);
+
+ for(int j=0;j<10;j++)
+ {
+  cout << arr[j] << " " ;
+ } 
+  
+  return 0;
 }
-if(ending.empty()){return true;}
-  
-  else if(pn_str == pn_end && lst_str == lst_end){ return true;}
-  
-    return false ;
-  
-    //return true;
-}
+
 int main() {
 
-  cout <<   solution("hello", "") << endl;
+descendingOrder(123456789);
 
     return 0;
 }
