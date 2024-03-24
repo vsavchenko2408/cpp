@@ -4,11 +4,17 @@ using std::cout;
 using std::cin;
 using std::endl;
 using std::string;
+
 int main()
 {
-string str; 
-cout << "Enter your text:" ;
-getline(cin, str);
-cout << "You write: " << str << endl;
-    return 0;
+
+string str("some text");
+cout << str.capacity() << endl;
+str.reserve(100);
+
+str.shrink_to_fit();
+cout << str.capacity() << endl;
+//cout << str;
+cout << endl;
+return 0;
 }

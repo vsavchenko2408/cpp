@@ -43,6 +43,8 @@ friend std::istream& operator>>(std::istream& is, Oper& obj)
     return is;
 }
 
+
+
 void show();//метод вывода
 
 private:

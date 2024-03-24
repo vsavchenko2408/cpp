@@ -1,44 +1,30 @@
 #include <iostream>
-static int count=0;// счетчик обьектов
+#include <cinttypes>
+#include <string>
+using std::cout;
+using std::endl;
 
-class MyClass//создаем наш класс
+
+int descendingOrder(int a)
 {
-  public:
-  MyClass(int a)
-  {
-      *this->a = a;
-  std::cout << "Constructor " << this << std::endl;
-  ++count;
-  }
+int arr[10];
+for(int i=1;i<100;i+10)
+{
+  arr[i] = (a/i);
+}
 
 
-  MyClass(const MyClass &other)//конструктор копирования
-  {
-    ++count;
-int* a = new int;
-*this->a = *a;
-std::cout << "Constructor " << this << std::endl;
-  }
-
-
-  ~MyClass()//деструктор
-  {
-      --count;
-      delete a;
-      a = nullptr;
-      std::cout << "Destructor " << this << std::endl;
-      std::cout << "Count = " << count << std::endl;
-  }
-
-private:
-    int* a = new int;
-    
-};
+ for(int j=0;j<10;j++)
+ {
+  cout << arr[j] << " " ;
+ } 
+  
+  return 0;
+}
 
 int main() {
-MyClass x(15);
 
+descendingOrder(123456789);
 
-std::cout << "Count = " << count << std::endl;
     return 0;
 }
