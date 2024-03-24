@@ -22,7 +22,8 @@ for(int j=0;j<MyVector.size();j++)
 } 
 
 
-cout << MyVector[4] << endl;
+
+
 
  return 0;
 }
