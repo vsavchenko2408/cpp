@@ -50,9 +50,9 @@ T* ptr = new T;
 
 int main()
 {
-int a = 50;
-SmartPointer<int> sm ;
-sm = a;
+//int a = 50;
+SmartPointer<int> sm(new int(5)) ;
+//sm = a;
 SmartPointer<int> sm1 = sm;
 cout << sm << endl;
 sm.~SmartPointer();
