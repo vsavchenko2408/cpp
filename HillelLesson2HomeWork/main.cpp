@@ -9,7 +9,7 @@ class SmartPointer
 public:
 
 
-SmartPointer(T* ptr)//конструктор копіювання
+SmartPointer(T &ptr)//конструктор копіювання
 {
     cntptr++;
 this->ptr = ptr;
@@ -31,11 +31,16 @@ SmartPointer operator*(T &obj)//перегрузка оператора розі
 {
     return *this;
 }
+friend std::ostream& operator<<(std::ostream& os,const SmartPointer& obj)//перегрузка оператора <<
+{
+os  << *obj.ptr;
 
+return os;
+}
 ~SmartPointer() //деструктор
 {
+    cntptr--;
     if(cntptr == 0) delete this->ptr;
-    else cntptr--;
 }
 
 private:
@@ -48,7 +53,9 @@ int main()
 int a = 50;
 SmartPointer<int> sm ;
 sm = a;
-
-
+SmartPointer<int> sm1 = sm;
+cout << sm << endl;
+sm.~SmartPointer();
+cout << cntptr;
     return 0;
 }
