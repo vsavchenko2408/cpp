@@ -8,9 +8,10 @@ class SmartPointer
 {
 public:
 
-SmartPointer()//конструктор за замовчуванням
+SmartPointer(T* obj)//конструктор за замовчуванням
 {
     ++cntptr;
+    this->ptr = obj;
 }
 SmartPointer(const SmartPointer<T> &other) : ptr(other.ptr)//конструктор копіювання
 {
@@ -49,7 +50,7 @@ return os;
 
 private:
 unsigned int* cntptr = new unsigned int;
-T* ptr = new T;
+T* ptr = nullptr;
 };
 
 
@@ -62,5 +63,7 @@ SmartPointer<int> sm1 = sm;
 cout << sm << endl;
 sm.~SmartPointer();
 
+
+system("pause");
     return 0;
 }
