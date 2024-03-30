@@ -1,35 +1,35 @@
 #include <iostream>
 using std::cout;
 using std::endl;
-static unsigned int cntptr = 0;//лічильник
+
 
 template<class T>
 class SmartPointer
 {
 public:
 
-
-SmartPointer(T &ptr)//конструктор копіювання
-{
-    cntptr++;
-this->ptr = ptr;
-}
-
 SmartPointer()//конструктор за замовчуванням
 {
-    cntptr++;
-
+    ++cntptr;
 }
-SmartPointer operator=(T &obj)//перегрузка оператора присвоєння
+SmartPointer(const SmartPointer<T> &other) : ptr(other.ptr)//конструктор копіювання
 {
-    cntptr++;
-    *this->ptr = obj;
+    ++cntptr;
+this->ptr = other.ptr;
+}
+
+
+SmartPointer operator=(const SmartPointer<T> &obj)//перегрузка оператора присвоєння
+{
+    ++cntptr;
+    if(this == &obj){ return this;}
+    *this->ptr = obj->ptr;
     return *this;
 }
 
 SmartPointer operator*(T &obj)//перегрузка оператора розіменування
 {
-    return *this;
+    return *ptr;
 }
 friend std::ostream& operator<<(std::ostream& os,const SmartPointer& obj)//перегрузка оператора <<
 {
@@ -39,11 +39,16 @@ return os;
 }
 ~SmartPointer() //деструктор
 {
-    cntptr--;
-    if(cntptr == 0) delete this->ptr;
+    --cntptr;
+    if(*cntptr == 0)
+    { 
+        delete this->ptr;
+        delete this->cntptr;
+    }
 }
 
 private:
+unsigned int* cntptr = new unsigned int;
 T* ptr = new T;
 };
 
@@ -56,6 +61,6 @@ SmartPointer<int> sm(new int(5)) ;
 SmartPointer<int> sm1 = sm;
 cout << sm << endl;
 sm.~SmartPointer();
-cout << cntptr;
+
     return 0;
 }
