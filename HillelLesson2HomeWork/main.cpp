@@ -8,7 +8,7 @@ class SmartPointer
 {
 public:
 
-SmartPointer(T* obj)//конструктор за замовчуванням
+SmartPointer(T* obj)//конструктор з параметрами
 {
     ++cntptr;
     this->ptr = obj;
@@ -20,7 +20,7 @@ this->ptr = other.ptr;
 }
 
 
-SmartPointer operator=(const SmartPointer<T> &obj)//перегрузка оператора присвоєння
+SmartPointer<T>& operator=(const SmartPointer<T> &obj)//перегрузка оператора присвоєння
 {
     ++cntptr;
     if(this == &obj){ return this;}
@@ -28,13 +28,13 @@ SmartPointer operator=(const SmartPointer<T> &obj)//перегрузка опе�
     return *this;
 }
 
-SmartPointer operator*(T &obj)//перегрузка оператора розіменування
+T& operator*()//перегрузка оператора розіменування
 {
     return *ptr;
 }
 friend std::ostream& operator<<(std::ostream& os,const SmartPointer& obj)//перегрузка оператора <<
 {
-os  << *obj.ptr;
+os  << obj.ptr;
 
 return os;
 }
@@ -61,9 +61,8 @@ SmartPointer<int> sm(new int(5)) ;
 //sm = a;
 SmartPointer<int> sm1 = sm;
 cout << sm << endl;
-sm.~SmartPointer();
-
-
+cout << "///////////////////////////" << endl;
+cout << *sm << endl;
 system("pause");
     return 0;
 }
