@@ -9,19 +9,19 @@ class SmartPointer
 public:
     SmartPointer(T *obj) // конструктор з параметрами
     {
-        ++cntptr;
+        ++(*cntptr);
         this->ptr = obj;
     }
 
     SmartPointer(const SmartPointer<T> &other) : ptr(other.ptr) // конструктор копіювання
     {
-        ++cntptr;
+        ++(*cntptr);
         this->ptr = other.ptr;
     }
 
     SmartPointer<T> &operator=(const SmartPointer<T> &obj) // перегрузка оператора присвоєння
     {
-        ++cntptr;
+        ++(*cntptr);
         if (this == &obj)
         {
             return this;
@@ -30,19 +30,26 @@ public:
         return *this;
     }
 
-    T &operator*() // перегрузка оператора розіменування
+     T &operator*() // перегрузка оператора розіменування
     {
         return *ptr;
     }
+
     friend std::ostream &operator<<(std::ostream &os, const SmartPointer &obj) // перегрузка оператора <<
     {
         os << obj.ptr;
         return os;
     }
 
+    unsigned int use_count() // доступ до лічильника
+    {
+
+        return *cntptr;
+    }
+
     ~SmartPointer() // деструктор
     {
-        --cntptr;
+        --(*cntptr);
         if (*cntptr == 0)
         {
             delete this->ptr;
@@ -51,7 +58,7 @@ public:
     }
 
 private:
-    unsigned int *cntptr = new unsigned int;
+    unsigned int *cntptr = new unsigned int(0);
     T *ptr = nullptr;
 };
 
@@ -64,6 +71,8 @@ int main()
     cout << sm << endl;
     cout << "///////////////////////////" << endl;
     cout << *sm << endl;
+  
+    cout << sm1.use_count() << endl;
     system("pause");
     return 0;
 }
