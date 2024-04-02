@@ -1,26 +1,27 @@
 #include <iostream>
+#include <array>
+#include <random>
+#include <algorithm>
 using namespace std;
 
 int main()
 {
-/*
-const int N=10;
-int arr[N];
-for(int i=0;i<N;i++)
+srand(time(NULL));
+array<int, 16> arr;
+for(int j=0;j<arr.size();j++)
 {
-arr[i]=i;
-cout << arr[i] << endl;
+arr[j] = rand()%100;
 }
-*/
-
-short arr[4] = {1,2,3,4};
-for(int i=0;i<8;i++)
+for(int i: arr)
 {
-    
-cout << arr[i] << endl ;
+    cout << i << endl;
 }
+cout << "sorted " << endl;
+sort(arr.begin(), arr.end());
 
-
-
+for(int i: arr)
+{
+    cout << i << endl;
+}
     return 0;
 }
