@@ -5,6 +5,7 @@ using std::endl;
 
 int main()
 {
+    std::random_device rd;
     int arr[100];
 for(int i=0;i<100;i++)
 {
