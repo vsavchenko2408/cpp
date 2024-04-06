@@ -9,19 +9,19 @@ class SmartPointer
 public:
     SmartPointer(T *obj) // конструктор з параметрами
     {
-        ++(*cntptr);
+        ++cntptr;
         this->ptr = obj;
     }
 
     SmartPointer(const SmartPointer<T> &other) : ptr(other.ptr) // конструктор копіювання
     {
-        ++(*cntptr);
+        ++cntptr;
         this->ptr = other.ptr;
     }
 
     SmartPointer<T> &operator=(const SmartPointer<T> &obj) // перегрузка оператора присвоєння
     {
-        ++(*cntptr);
+        ++cntptr;
         if (this == &obj)
         {
             return this;
@@ -49,7 +49,7 @@ public:
 
     ~SmartPointer() // деструктор
     {
-        --(*cntptr);
+        --cntptr;
         if (*cntptr == 0)
         {
             delete this->ptr;
