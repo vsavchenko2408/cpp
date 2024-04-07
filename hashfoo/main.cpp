@@ -10,9 +10,9 @@ using std::endl;
 
 int main()
 {
-MyClass mc("some text");
+MyClass mc;
 
-
+mc.show();
 
 
 system("pause");
