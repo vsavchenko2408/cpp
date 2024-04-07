@@ -15,7 +15,7 @@ for(auto x: str)
     id += x;
 }
 
-return id;
+return id%10;
 }
 
 int main()
