@@ -1,63 +1,53 @@
-//Мені допамагав chatGPT. Я чесно зізнаюсь що мало розімую як мій код працює
-
-
 #include <iostream>
-#include <random>
 #include <unordered_map>
-using std::cout;
-using std::endl;
-using std::string;
-/*
-std::random_device rd; // виніс у глобальну зону видимості бо інакше в мене видає одне й те саме значення
-std::uniform_int_distribution<int> dist(1, 100);
-int myrand() // зробив зручну функцію яка видає рандомне число але не бачу де вона використовується і код працює без неї
-{
-    return dist(rd);
-}
-*/
+#include <string>
+#include <functional> // для std::hash
+#include <random>     // для генератора випадкових чисел
 
-class MyClass // Мій класс
+// Ваш клас
+struct CKey
+{
+    std::string part1 = "";
+    std::string part2 = "";
+
+    // Перевизначення оператора == для порівняння об'єктів класу CKey
+    bool operator==(const CKey &other) const
+    {
+        return part1 == other.part1 && part2 == other.part2;
+    }
+};
+
+// Хеш функція для класу CKey
+class CKeyHashFunctor
 {
 public:
-    MyClass() = default; //я не знав що так можна створювати конструктор за замовчуванням
-
-    MyClass(string idValue)
+    size_t operator()(const CKey &key) const
     {
-        id = idValue;
+        // Об'єднуємо частини ключа і хешуємо отриману строку
+        return std::hash<std::string>{}(key.part1 + key.part2);
     }
-
-    size_t hash() const // я досі не розумію що за тип даних size_t
-    {
-        return std::hash<string>{}(id); // chatGPT сказав можна користуватись функцією яка є в STL.
-    }
-
-    string getId() const // метод що повертає сирий ID
-    {
-        return id;
-    }
-
-private:
-    string id;
 };
 
 int main()
 {
+    // Створення контейнера unordered_map з використанням нашого класу та хеш-функції
+    std::unordered_map<CKey, int, CKeyHashFunctor> map;
 
-    std::unordered_map<size_t, MyClass> uomap;
+    // Генератор випадкових чисел
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(1, 100);
 
-    for (int i = 0; i < 10; ++i)
+    // Заповнення контейнера декількома значеннями
+    map[CKey{"Hello", "World!"}] = dis(gen);
+    map[CKey{"It's", "me!"}] = dis(gen);
+    map[CKey{"How are", "you?"}] = dis(gen);
+
+    // Виведення значень у консоль з використанням ranged-based for
+    for (const auto &pair : map)
     {
-        std::string id = "ID: " + std::to_string(i);
-        MyClass obj(id);
-        uomap[obj.hash()] = obj;
+        std::cout << "Key: (" << pair.first.part1 << ", " << pair.first.part2 << "), Value: " << pair.second << std::endl;
     }
 
-    
-    for ( auto x : uomap)
-    {
-        std::cout << "Key: " << x.first << ", Value: " << x.second.getId() << std::endl;
-    }
-
-    system("pause");
     return 0;
 }
