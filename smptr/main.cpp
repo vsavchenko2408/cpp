@@ -8,7 +8,7 @@ using std::cin;
 int main()
 {
     int a = 15;
-    SmartPointers<int> ptr(a);
+    SmartPointers<int> ptr ;
 
     return 0;
 }

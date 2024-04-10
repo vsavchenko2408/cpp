@@ -12,7 +12,7 @@ public:
     ~SmartPointers();
     unsigned int show_cnt();
     T operator*();
-    operator=(T& obj);
+    void operator=(T& obj);
 private:
 
 static unsigned int count;

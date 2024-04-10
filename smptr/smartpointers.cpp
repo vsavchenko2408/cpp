@@ -33,13 +33,14 @@ T SmartPointers<T>::operator *()
 }
 
 template<class T>
-SmartPointers<T>::operator=(T& obj)
+void SmartPointers<T>::operator=(T& obj)
 {
     {
     if(count !=0) ++count;
     else count =0;
     }
     this.ptr = obj.ptr;
+    
 }
 
 
