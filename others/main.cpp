@@ -5,17 +5,29 @@ using std::cout;
 using std::endl;
 
 
-
+template <class T>
+T foo(T obj)
+{
+auto x = std::make_shared<T> (obj);
+cout << x.use_count() << endl;
+    return *x;
+}
 
 int main() {
 
+int* a = new int(10);
 
-int a = 15;
-std::shared_ptr<int> ptr = std::make_shared<int> (a);
+auto t = std::make_shared<int>(foo(*a));
 
-*ptr = 45;
+auto x = std::make_shared<int>(*t);
+cout << "Count t: " << t.use_count() << endl;
+cout << "Count x: " << x.use_count() << endl;
 
-cout << *ptr << endl;
 
+
+cout << "T: " << *t << endl;
+cout << "X: " << *x << endl;
+
+system("pause");
     return 0;
 }
