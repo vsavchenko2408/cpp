@@ -42,5 +42,6 @@ MyClass a(12);
 MyClass b(a);
 cout << "End program" << endl;
 cout << "Count: " << count << endl;
+system("pause");
     return 0;
 }
