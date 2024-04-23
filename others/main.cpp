@@ -1,44 +1,52 @@
 #include <iostream>
+#include <map>
 using std::cin;
 using std::cout;
 using std::endl;
 
-class MyString
+
+
+int main() 
 {
-public:
-MyString(){str = nullptr;}
-MyString(char _str[])
+std::pair<int ,std::string> p1,p2,p3;
+p1.first = 1;
+p1.second = "sometext1";
+p2.first = 2;
+p2.second = "sometext2";
+p3.first = 3;
+p3.second = "sometext3";
+
+
+
+std::map <int , std::string> m;
+std::map <std::string, u_int> m2;
+
+m.insert(p1);
+m.insert(p2);
+m.insert(p3);
+m.insert(std::make_pair(4, "sometext4"));
+m.insert(std::make_pair(4, "sometext4"));
+m.insert(std::pair<int,std::string>(5,"sometext5"));
+m.emplace(6,"sometext6");
+
+
+for(auto i: m)
 {
-str = _str;
+    m2.emplace(i.second , i.first);
 }
 
-void print_str()
+for(auto x: m)
 {
-    cout << str << endl;
-}
-void set_string()
-{
-    cin >> str[50];
-}
-void operator=(char _str[])
-{
-    str = _str;
+    
+    cout << x.first << " " << x.second << endl;
 }
 
-~MyString()
+cout <<endl << endl;
+for(auto x: m2)
 {
-    delete [] str;
+    
+    cout << x.first << " " << x.second << endl;
 }
-private:
-char* str = new char[50];
-};
 
-int main() {
-
-cout << "Input some text: " << endl;
-
-MyString a;
-a.set_string();
-a.print_str();
     return 0;
 }
