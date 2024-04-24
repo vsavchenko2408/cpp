@@ -13,6 +13,6 @@ MyClass mc;
 mc.set_xyz(4,2,6);
 mc.show_xyz();
 
-system("pause");
+//system("pause");
     return 0;
 }
