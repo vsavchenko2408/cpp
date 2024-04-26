@@ -1,17 +1,16 @@
 #include <iostream>
-#include "MyClass.h"
+#include "MyLib.lib"
 //#include <map>
 using std::cin;
 using std::cout;
 using std::endl;
-
+using ML::
 
 
 int main() 
 {
-MyClass mc;
-mc.set_xyz(4,2,6);
-mc.show_xyz();
+MyLib::MyClass mc;
+
 
 //system("pause");
     return 0;
