@@ -1,15 +1,18 @@
 #include <iostream>
-#include "MyLib.lib"
+#include "MyLibrary.h"
 //#include <map>
 using std::cin;
 using std::cout;
 using std::endl;
-using ML::
+using MyLib::MyClass;
 
 
 int main() 
 {
 MyLib::MyClass mc;
+
+mc.set_data(15);
+cout << mc.get_data();
 
 
 //system("pause");
