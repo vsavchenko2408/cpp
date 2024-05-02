@@ -1,6 +1,6 @@
 #include <iostream>
 #include "MyLibrary.h"
-//#include <map>
+#include <map>
 using std::cin;
 using std::cout;
 using std::endl;
