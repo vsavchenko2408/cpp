@@ -11,9 +11,9 @@ class MyClass
     int data;
 };
 
-MyClass foo(MyClass a)
+MyClass foo(std::shared_ptr<MyClass> ptr)
 {
-std::shared_ptr<MyClass> ptr(a);
+
     
     //*ptr+=5;
     return *ptr;
@@ -22,7 +22,7 @@ std::shared_ptr<MyClass> ptr(a);
 int main() 
 {
     MyClass* a = new MyClass(15);
-    MyClass newptr = foo(*a);
+    MyClass newptr = foo(a);
 
     return 0;
 }
