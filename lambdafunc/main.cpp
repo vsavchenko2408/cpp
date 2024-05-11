@@ -13,5 +13,6 @@ int a = 15;
 auto f = [&a](){return a*10;};
 cout << f() << endl;
 cout << "A: " << a << endl;
+
     return 0;
 }
