@@ -1,7 +1,7 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
-using namespace std;
+//using namespace std;
 
 void foo1()
 {
