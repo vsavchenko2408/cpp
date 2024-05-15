@@ -4,7 +4,7 @@ int main()
 {
 Complex a(15,3);
 Complex b(10,5);
-Complex c(a+b);
-c.show();
+//Complex c(a+b);
+//c.show();
     return 0;
 }
