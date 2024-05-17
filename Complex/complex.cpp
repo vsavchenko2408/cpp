@@ -1,9 +1,10 @@
-#include "complex.h"
 #include <iostream>
+#include "complex.h"
+
 Complex::Complex()
 {
-    real = 0;
-    imag = 0;
+   real = 0;
+   imag = 0;
 }
 
 Complex::Complex(int _real)
@@ -17,7 +18,16 @@ Complex::Complex(int _real, int _imag)
     real = _real;
     imag = _imag; 
 }
+Complex::Complex(Complex& obj)
+{
+this->real = obj.real;
+this->imag = obj.real;
+}
 
+Complex::~Complex()
+{
+
+}
 void Complex::show() const
 {
     std::cout << "Real: " << this->real << std::endl;
