@@ -4,12 +4,13 @@
 
 int main()
 {
-    int a = 5;
-    int* ptr1 = &a;
-SmartPointer<int> ptr(ptr1);
+    int* ptr_a = new int(5); 
+    
+SmartPointer<int> ptr(ptr_a);
 
+SmartPointer<int> ptr1(ptr_a);
 
-
+std::cout << (ptr<ptr1) << std::endl;
 
     return 0;
 }
