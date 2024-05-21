@@ -3,26 +3,15 @@
 using std::cin;
 using std::cout;
 using std::endl;
-class MyClass
-{
-    public:
-    MyClass() = default;
-    MyClass(int _data){ data = _data;}
-    int data;
-};
-
-MyClass foo(std::shared_ptr<MyClass> ptr)
-{
-
-    
-    //*ptr+=5;
-    return *ptr;
-}
 
 int main() 
 {
-    MyClass* a = new MyClass(15);
-    MyClass newptr = foo(a);
+    int a = 15;
+   std::shared_ptr<int> ptr = std::make_shared<int>(a);
+std::shared_ptr<int> ptr1 = ptr;
 
+cout << ptr1.use_count()<< endl;
+
+system("pause");
     return 0;
 }
