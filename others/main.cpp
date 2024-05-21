@@ -6,9 +6,7 @@ using std::endl;
 
 int main() 
 {
-    int a = 0x432343;
-   std::shared_ptr<int> ptr = std::make_shared<int>(a);
-   cout << "Ptr is: " << ptr << endl;
-   
+  auto* new_ptr = reinterpret_cast<int*>(0x10);
+   cout << *new_ptr << endl;
     return 0;
 }
