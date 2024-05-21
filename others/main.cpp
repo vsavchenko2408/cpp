@@ -6,12 +6,9 @@ using std::endl;
 
 int main() 
 {
-    int a = 15;
+    int a = 0x432343;
    std::shared_ptr<int> ptr = std::make_shared<int>(a);
-std::shared_ptr<int> ptr1 = ptr;
-
-cout << ptr1.use_count()<< endl;
-
-system("pause");
+   cout << "Ptr is: " << ptr << endl;
+   
     return 0;
 }
