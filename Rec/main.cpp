@@ -17,5 +17,6 @@ int main()
 int i = 0;  
 int b = foo(i);
 cout << "B = " << b << endl;
+system("pause");
     return 0;
 }
