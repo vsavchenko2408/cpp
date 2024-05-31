@@ -14,5 +14,5 @@ int main()
 int(*ptrfoo) (int)= foo;
 cout << (*ptrfoo)(15) << endl;
 
-
+system("pause");
 }
