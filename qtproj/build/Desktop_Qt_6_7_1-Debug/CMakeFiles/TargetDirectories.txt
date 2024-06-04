@@ -1,7 +1,0 @@
-/home/master/cpp/qtproj/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/qtproj.dir
-/home/master/cpp/qtproj/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/edit_cache.dir
-/home/master/cpp/qtproj/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/rebuild_cache.dir
-/home/master/cpp/qtproj/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/list_install_components.dir
-/home/master/cpp/qtproj/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/install.dir
-/home/master/cpp/qtproj/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/install/local.dir
-/home/master/cpp/qtproj/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/install/strip.dir

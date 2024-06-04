@@ -5,6 +5,13 @@
 **/vs/
 **/vs
 
+/.build/
+/.build
+.build
+.build/
+**/build/
+**/build
+
 .x64
 /.x64/
 x64
