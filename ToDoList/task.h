@@ -3,15 +3,16 @@
 #include <iostream>
 class Task
 {
-    std::string name;
+    std::string work;
     bool status;
     int priority;
 
 public:
-    Task( std::string _name, bool _status, int _priority);  //args constr
-    Task() = default;                                       //default const
+    Task( std::string _work, bool _status, int _priority);  //args constr
+    Task();                                       //default const
     void task_info();                                       //display all info
     void set_priority(int _priority);
+    void complete();
 
 };
 
