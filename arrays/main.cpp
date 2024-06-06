@@ -2,6 +2,7 @@
 #include <array>
 #include <random>
 #include <algorithm>
+#include <ctime>
 using namespace std;
 
 int main()
@@ -23,5 +24,6 @@ for(int i: arr)
 {
     cout << i << endl;
 }
+system("pause");
     return 0;
 }
