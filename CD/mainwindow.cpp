@@ -21,7 +21,7 @@ void MainWindow::on_toolButton_clicked()
 {
 
 
-    path = QFileDialog::getOpenFileName(this, "Выберите файл");
+    path = QFileDialog::getOpenFileName(this, "Выберите файл", "/home/master");
     ui->label->setText(path);
     selectedFile = new QFile(path);
     emit fileSelected(selectedFile);
