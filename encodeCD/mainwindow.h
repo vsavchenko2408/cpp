@@ -2,7 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include <vector>
+#include <map>
+#include <queue>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -24,7 +26,8 @@ private:
     Ui::MainWindow *ui;
     QString inputFilePath;
     void printStatistics(const std::vector<int>& data, const QString& label);
-    std::vector<bool> encode(const std::vector<int>& data);
+    std::string encode(const std::vector<int> &data);
     void updateProgressBar(int value);
+    void writeEncodedDataToFile(const std::string& encodedData, const QString& filePath);
 };
 #endif // MAINWINDOW_H

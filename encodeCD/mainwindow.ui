@@ -27,7 +27,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Выбрать файл</string>
+     <string>Вибрати файл</string>
     </property>
    </widget>
    <widget class="QLabel" name="filePathLabel">
@@ -40,7 +40,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Путь к файлу: </string>
+     <string>Шлях до файлу</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="statisticsTextEdit">
@@ -75,7 +75,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Выполнить</string>
+     <string>Виконати</string>
     </property>
    </widget>
    <widget class="QPushButton" name="cancelButton">
@@ -88,7 +88,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Отменить</string>
+     <string>Зупинити</string>
     </property>
    </widget>
    <widget class="QProgressBar" name="progressBar">
