@@ -1,5 +1,6 @@
 #include "cabacencoding.h"
-
+#include <bitset>
+#include <iostream>
 
 void CABACEncoder::encode_bit(int bit, unsigned int probability)
 {

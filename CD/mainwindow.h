@@ -3,8 +3,11 @@
 
 #include <QMainWindow>
 #include <QFileDialog>
+#include <QFile>
+#include "cabacencoding.h"
 QT_BEGIN_NAMESPACE
-namespace Ui {
+namespace Ui
+{
 class MainWindow;
 }
 QT_END_NAMESPACE
@@ -19,10 +22,11 @@ public:
 
 private slots:
     void on_toolButton_clicked();
-
     void on_action_clicked();
-
+signals:
+    void fileSelected(QFile* file);
 private:
     Ui::MainWindow *ui;
+    QFile* selectedFile;
 };
 #endif // MAINWINDOW_H
