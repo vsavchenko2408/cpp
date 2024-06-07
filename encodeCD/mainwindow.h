@@ -3,8 +3,7 @@
 
 #include <QMainWindow>
 #include <vector>
-#include <map>
-#include <queue>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -25,10 +24,9 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QString inputFilePath;
+    std::vector<int> encode(const std::vector<int> &data);
+    void writeEncodedDataToFile(const std::vector<int>& encodedData, const QString& filePath);
     void printStatistics(const std::vector<int>& data, const QString& label);
-    std::string encode(const std::vector<int> &data);
     void updateProgressBar(int value);
-    void writeEncodedDataToFile(const std::string& encodedData, const QString& filePath);
-
 };
 #endif // MAINWINDOW_H
