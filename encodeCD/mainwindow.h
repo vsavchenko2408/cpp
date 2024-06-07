@@ -29,5 +29,6 @@ private:
     std::string encode(const std::vector<int> &data);
     void updateProgressBar(int value);
     void writeEncodedDataToFile(const std::string& encodedData, const QString& filePath);
+
 };
 #endif // MAINWINDOW_H
