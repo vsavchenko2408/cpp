@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>903</width>
-    <height>466</height>
+    <width>800</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,9 +17,9 @@
    <widget class="QProgressBar" name="cdProgressBar">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>320</y>
-      <width>861</width>
+      <x>10</x>
+      <y>250</y>
+      <width>781</width>
       <height>31</height>
      </rect>
     </property>
@@ -30,9 +30,9 @@
    <widget class="QPushButton" name="Cancel">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>360</y>
-      <width>411</width>
+      <x>10</x>
+      <y>300</y>
+      <width>371</width>
       <height>41</height>
      </rect>
     </property>
@@ -43,9 +43,9 @@
    <widget class="QPushButton" name="action">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>360</y>
-      <width>411</width>
+      <x>420</x>
+      <y>300</y>
+      <width>371</width>
       <height>41</height>
      </rect>
     </property>
@@ -56,8 +56,8 @@
    <widget class="QLabel" name="cdTimeLabel">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>270</y>
+      <x>20</x>
+      <y>200</y>
       <width>171</width>
       <height>31</height>
      </rect>
@@ -89,7 +89,7 @@
      </rect>
     </property>
     <property name="text">
-     <string> </string>
+     <string/>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -104,8 +104,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>903</width>
-     <height>20</height>
+     <width>800</width>
+     <height>25</height>
     </rect>
    </property>
   </widget>

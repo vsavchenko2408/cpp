@@ -2,6 +2,9 @@
 #include "ui_mainwindow.h"
 #include <QVector>
 #include <QDebug>
+#include <QDataStream>
+QVector<int> dataforencode;
+ QString path;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -16,7 +19,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_toolButton_clicked()
 {
-    QString path;
+
 
     path = QFileDialog::getOpenFileName(this, "Выберите файл");
     ui->label->setText(path);
@@ -27,20 +30,20 @@ void MainWindow::on_toolButton_clicked()
 
 void MainWindow::on_action_clicked()
 {
-    QVector<int> dataforencode;
+    selectedFile->open(QIODevice::ReadOnly);
     if(selectedFile)
     {
         if(selectedFile->isOpen())
         {
-            int count = (selectedFile->size()/sizeof(int));
-            int intValue;
-            for(int i=0;i<count;i++)
-            {
-                if (selectedFile->read(reinterpret_cast<char*>(&intValue), sizeof(int)) == sizeof(int))
-                {
-                    dataforencode.append(intValue);
-                }
+            QDataStream in(selectedFile);
+
+            while (!in.atEnd()) {
+                int number;
+                in >> number;
+                dataforencode.push_back(number);
             }
+
+
         }
         else
         {
@@ -53,12 +56,12 @@ void MainWindow::on_action_clicked()
     }
 
     //debug
-    for(int x:dataforencode)
+    for(int i=0;i<dataforencode.length();i++)
     {
-        qDebug() << x;
+        qDebug() << dataforencode.at(i);
     }
 
-
+selectedFile->close();
 
 }
 
