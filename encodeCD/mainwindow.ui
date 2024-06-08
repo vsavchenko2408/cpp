@@ -58,28 +58,6 @@
      <string>Шлях до файлу</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="statisticsTextEdit">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>140</y>
-      <width>361</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>700</width>
-      <height>396</height>
-     </size>
-    </property>
-    <property name="readOnly">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QPushButton" name="encodeButton">
     <property name="geometry">
      <rect>
@@ -151,6 +129,19 @@
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="executionTimeLabel">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>180</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>00.00.00</string>
     </property>
    </widget>
   </widget>
