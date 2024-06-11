@@ -1,13 +1,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "statisticswindow.h"
-#include "ui_statisticswindow.h"
 #include <QFileDialog>
 #include <QMessageBox>
 #include <fstream>
 #include <vector>
 #include <iostream>
 #include <QApplication>
+#include <QElapsedTimer>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -18,13 +18,14 @@ MainWindow::MainWindow(QWidget *parent)
     statisticsWindow = new StatisticsWindow(this);
     executionTimer = new QTimer(this);
     connect(executionTimer, &QTimer::timeout, this, &MainWindow::updateExecutionTime);
-    executionTime = QTime(0, 0);
+    elapsedTimer = new QElapsedTimer();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
     delete statisticsWindow;
+    delete elapsedTimer;
 }
 
 void MainWindow::on_selectFileButton_clicked()
@@ -41,7 +42,11 @@ void MainWindow::on_encodeButton_clicked()
         QMessageBox::warning(this, "Ошибка", "Сначала выберите файл!");
         return;
     }
-    executionTime = QTime(0, 0);
+
+    ui->executionTimeLabel->setText("00:00:00");
+    ui->progressBar->setValue(0);
+
+    elapsedTimer->start();
     executionTimer->start(1000);
 
     std::ifstream inputFile(inputFilePath.toStdString());
@@ -53,16 +58,38 @@ void MainWindow::on_encodeButton_clicked()
         inputData.push_back(number);
     }
 
+    // Установите общее количество шагов для прогрессбара
+    int totalSteps = inputData.size();
+    int currentStep = 0;
 
-    std::vector<int> encodedData = encode(inputData);
+    // Кодирование с обновлением прогрессбара
+    std::vector<int> encodedData;
+    if (!inputData.empty()) {
+        int count = 1;
+        for (size_t i = 1; i < inputData.size(); ++i) {
+            if (inputData[i] == inputData[i - 1]) {
+                ++count;
+            } else {
+                encodedData.push_back(count);
+                count = 1;
+            }
+            // Обновляем прогрессбар
+            currentStep++;
+            int progress = static_cast<int>((static_cast<double>(currentStep) / totalSteps) * 100);
+            QMetaObject::invokeMethod(this, "updateProgressBar", Qt::QueuedConnection, Q_ARG(int, progress));
+        }
+        encodedData.push_back(count);
+    }
+
+    executionTimer->stop();
+    ui->executionTimeLabel->setText(QTime(0, 0).addMSecs(elapsedTimer->elapsed()).toString("hh:mm:ss"));
 
     writeEncodedDataToFile(encodedData, "encoded_output.txt");
 
     statisticsWindow->displayStatistics(inputData, "Вхід", encodedData, "Вихід");
     statisticsWindow->exec();
-    executionTimer->stop();
-    ui->progressBar->setValue(100);
 
+    ui->progressBar->setValue(100);
 }
 
 void MainWindow::on_cancelButton_clicked()
@@ -70,14 +97,9 @@ void MainWindow::on_cancelButton_clicked()
     QApplication::quit();
 }
 
-//void MainWindow::printStatistics(const std::vector<int>& data, const QString& label)
-//{
-//    showStatisticsWindow(data, label);
-//}
 void MainWindow::updateExecutionTime()
 {
-    executionTime = executionTime.addSecs(1);
-    QString timeText = executionTime.toString("hh:mm:ss");
+    QString timeText = QTime(0, 0).addMSecs(elapsedTimer->elapsed()).toString("hh:mm:ss");
     ui->executionTimeLabel->setText(timeText);
 }
 
@@ -112,9 +134,3 @@ void MainWindow::writeEncodedDataToFile(const std::vector<int>& encodedData, con
         outputFile.write(reinterpret_cast<const char*>(&count), sizeof(count));
     }
 }
-
-//void MainWindow::showStatisticsWindow(const std::vector<int>& data, const QString& label)
-//{
-//    statisticsWindow->displayStatistics(data, label);
-//    statisticsWindow->exec();
-//}

@@ -1,3 +1,4 @@
+//statisticswindow.h
 #ifndef STATISTICSWINDOW_H
 #define STATISTICSWINDOW_H
 
