@@ -30,9 +30,9 @@ void foo(MC &obj, int value)
 int main()
 {
     MC a;
-    foo(a, 15);
-    a.show_data();
-
+    //foo(a, 15);
+    //a.show_data();
+    std::cout << "Typeid: " << typeid(a).name() << std::endl;
 
 
     return 0;
