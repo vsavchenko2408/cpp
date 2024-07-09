@@ -19,5 +19,5 @@ for(int j=0;j<5;++j)
     std::cout << arr[j] << std::endl;
 }
 allfl.deallocate(arr, 5);
-system("pause");
+//system("pause");
 }
