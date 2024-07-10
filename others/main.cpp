@@ -1,12 +1,8 @@
-#include <iostream>
-#include <memory>
-using std::cin;
-using std::cout;
-using std::endl;
+#include <SFML/Graphics.hpp>
+#include "Game.h"
 
-int main() 
-{
-  auto* new_ptr = reinterpret_cast<int*>(0x10);
-   cout << *new_ptr << endl;
+int main() {
+    Game game;
+    game.run();
     return 0;
 }
