@@ -1,28 +1,28 @@
 #include "loader.h"
 
-LOADER::LOADER()                        //конструктор по умолчанию
+Loader::Loader()                        //конструктор по умолчанию
 {
     material = 0;
     ready = false;
 }
 
-LOADER::LOADER(int loadmaterial)        //конструктор с загрузкой материала
+Loader::Loader(int loadmaterial)        //конструктор с загрузкой материала
 {
    material = loadmaterial;
    if(material >= 100){ ready = true;} //если материала больше 100 то готов работе
    else
    {
-        LOADER::load(loadmaterial);
+        Loader::load(loadmaterial);
 
    }
 }
-void LOADER::load(unsigned int loadmaterial)//метод загрузки материала в загрузчик
+void Loader::load(unsigned int loadmaterial)//метод загрузки материала в загрузчик
 {
     material = loadmaterial;
 }
 
 
-int LOADER::loadingTPA()
+int Loader::loadingTPA()
 {
     if(material > 0)
     {
@@ -31,7 +31,7 @@ int LOADER::loadingTPA()
         return 1;
     }
     else{
-        LOADER::load(loadmaterial);
+        Loader::load(loadmaterial);
         ready = true;
     }
 }
