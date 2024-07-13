@@ -9,7 +9,7 @@ T1 left;
 T2 right;
 public:
 
-Operation(T1,T2)
+Operation()
 {
 std::cout << "Enter first value: ";
 std::cin >> left;
@@ -18,19 +18,19 @@ std::cin >> right;
 }
 
 
-T1 operator+(T2)//adding
+T1 plus()//adding
 {
     return left+right;
 }
-T1 operator-(T2)//subtracting
+T1 minus()//subtracting
 {
     return left-right;
 }
-T1 operator*(T2)//multiple
+T1 multi()//multiple
 {
     return left*right;
 }
-T1 operator/(T2)//division
+T1 divis()//division
 {
     return left/right;
 }
