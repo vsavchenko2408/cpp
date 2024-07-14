@@ -9,7 +9,6 @@ void Exit();
 int main()
 {
     char condition;
-    
 do
 {
     Hello();
