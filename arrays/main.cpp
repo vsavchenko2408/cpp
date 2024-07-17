@@ -1,27 +1,35 @@
 #include <iostream>
-#include <memory>
+#include <random>
 using std::cout;
 using std::endl;
 
+template<class T>
+void fillarr(T& arr, int N)
+{
+    for(int i=0;i<N;i++)
+    {
+        arr[i] = rand()%999;
+    }
+}
+template <class T>
+void showarr(T& arr, int N)
+{
+for(auto i: arr)
+{
+    cout << i << " ";
+}
+cout << endl;
+}
+
 int main()
 {
-    const size_t SIZE = 10;
-
-    std::shared_ptr<int> arr(new int[SIZE], std::default_delete<int[]>());
-    int* parr = arr.get();
-    for(int i = 0;i<SIZE;++i)
-    {
-        parr[i] = static_cast<int>(i+1);
-    }
-    for(int i = 0;i<SIZE;++i)
-    {
-        cout << parr[i] << " " ;
-    }
-
-//delete[] parr;
-parr = nullptr;
+srand(time_t(NULL));
+const int N =5;
+int arr[N];
+fillarr(arr, N);
+showarr(arr, N);
 
 
-
+system("pause");
     return 0;
 }
