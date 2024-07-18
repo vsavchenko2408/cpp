@@ -13,21 +13,8 @@ template <class T>
 void showarr(T& arr, int N); //Display array
 
 template <class T>
-void sort(T& arr, int N)
-{
-for(int i=0;i<N;i++)
-{
-    for(int j=0;j < N;j++)
-    {
-        if(arr[i] < arr[j])
-        {
-          swap(arr[i], arr[j]);  
-        }
-    }
-}
+void sort(T& arr, int N);
 
-
-}
 /////////////////////////////////////////////////////////////////////
 int main()
 {
@@ -69,4 +56,19 @@ void fillarr(T& arr, int N)
     {
         arr[i] = rand()%999;
     }
+}
+
+template <class T>
+void sort(T& arr, int N)
+{
+for(int i=0;i<N;i++)
+{
+    for(int j=0;j< N;j++)
+    {
+        if(arr[i] < arr[j])
+        {
+          swap(arr[i], arr[j]);  
+        }
+    }
+}
 }
