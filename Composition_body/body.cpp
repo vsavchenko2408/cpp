@@ -15,7 +15,7 @@ if(heart.heartbeat() == true&&brain.thinking() == true)
     std::cout << "Body is alive! " << std::endl;
 }
  else
-    {
+{
 std::cout << "Body is dead!" << std::endl;
-        }
+}
 }
