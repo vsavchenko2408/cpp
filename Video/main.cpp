@@ -1,5 +1,10 @@
 /*
-
+switch
+{
+case:
+case:
+default:
+}
 */
 
 
