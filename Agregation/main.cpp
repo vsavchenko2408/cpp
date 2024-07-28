@@ -39,32 +39,31 @@ dph = 10;
 class Map
 {
 private:
-std::vector<std::vector<int>> field;
-
+static const int ROW = 10;
+static const int COL = 10;
+int field[ROW][COL];
 
 public:
 Map()
 {
-for(auto &i: field)
+for(int i=0;i<COL;++i)
     {
-        
-        for(auto &x: i)
+        for(int j=0;j<ROW;++j)
         {   
-            i.emplace_back(0);
+          field[i][j] = 0;  
         }
     }   
 }
 void show_map()
 {
-for(auto &i: field)
+for(int i=0;i<COL;++i)
     {
-        for(auto &x: i)
-            {
-                cout << x << " ";
-            }
+        for(int j=0;j<ROW;++j)
+        {   
+          std::cout << field[i][j];  
+        }
         cout << endl;
-    }
-
+    }   
 }
 };
 
