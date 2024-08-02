@@ -3,21 +3,26 @@
 
 int main()
 {
-const int SIZE = 50;
-int arr[SIZE];
-int sum = 0;
-for(int i=0;i<SIZE;++i)
+    const int ROW = 10;
+    const int COL = 10;
+int arr[COL][ROW];
+
+for(int i =0; i < COL;++i)
 {
-    arr[i] = i+1;
-    std::cout << "Element: " << i << " = " << arr[i] << std::endl; 
+    for(int j =0; j<ROW; ++j)
+    {
+       arr[i][j] = i*j;
+    }
+}
+for(int i =1; i < COL;++i)
+{
+    for(int j =1; j<ROW; ++j)
+    {
+      std::cout << arr[i][j] << "  ";
+    }
+    std::cout << std::endl;
 }
 
-for(int j=0;j<SIZE;++j)
-{
-    sum += arr[j];
-}
-
-std::cout << "Sum of all elements: " << sum << std::endl;
 
     return 0;
 }
