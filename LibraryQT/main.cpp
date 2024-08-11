@@ -34,6 +34,20 @@ public:
         cout << author << endl;
         cout << year << endl;
     }
+    void addBook()
+    {
+        std::string tname;
+        std::string tauthor;
+        int tyear;
+        cout << "Input name: ";
+        cin >> tname;
+        cout << "Input author: ";
+        cin >> tauthor;
+        cout << "Input year: ";
+        cin >> tyear;
+        Book(tname, tauthor, tyear);
+
+    }
 };
 
 
@@ -43,6 +57,7 @@ int main()
     std::vector<Book> library;
     library.emplace_back("LOTR","Tolkien",1957);
     library.emplace_back("Master and Margarita","Bulgakov",1920);
+
     for(auto x: library)
     {
         x.showBookInfo();
