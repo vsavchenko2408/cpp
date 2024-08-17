@@ -3,6 +3,7 @@ using std::cout;
 using std::endl;
 using std::cin;
 
+<<<<<<< HEAD
 void foo(int count)
 {
 	cout << "Enter " << count << endl;
@@ -15,9 +16,10 @@ void foo(int count)
 	}
 }
 
+=======
+>>>>>>> 981905c50d37edd2d5d4808feaefd3fb4573fd1a
 int main()
 {
-    foo(10);
 
     return 0;
 }
