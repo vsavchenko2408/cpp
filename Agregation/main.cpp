@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#define uint unsigned int
 using std::cout;
 using std::cin;
 using std::endl;
