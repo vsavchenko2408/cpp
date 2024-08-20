@@ -75,6 +75,6 @@ int main()
 Map map;
 map.show_map();
 
-
+system("pause");
     return 0;
 }
