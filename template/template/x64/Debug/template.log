@@ -1,7 +1,0 @@
-﻿  template.cpp
-E:\My Projects\template\template\template.cpp(20): error C4700: использована неинициализированная локальная переменная "y"
-E:\My Projects\template\template\template.cpp(20): error C4700: использована неинициализированная локальная переменная "x"
-E:\My Projects\template\template\template.cpp(25): error C4700: использована неинициализированная локальная переменная "b"
-E:\My Projects\template\template\template.cpp(25): error C4700: использована неинициализированная локальная переменная "a"
-E:\My Projects\template\template\template.cpp(14): warning C4715: myMax<double>: значение возвращается не при всех путях выполнения
-E:\My Projects\template\template\template.cpp(14): warning C4715: myMax<int>: значение возвращается не при всех путях выполнения
