@@ -1,4 +1,5 @@
-#pragma once
+#ifndef GAME_H
+#define GAME_H
 
 #include <SFML/Graphics.hpp>
 #include "Snake.h"
@@ -16,3 +17,6 @@ private:
     sf::RenderWindow mWindow;
     Snake mSnake;
 };
+
+
+#endif

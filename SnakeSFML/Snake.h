@@ -1,4 +1,5 @@
-#pragma once
+#ifndef SNAKE_H
+#define SNAKE_H
 
 #include <SFML/Graphics.hpp>
 #include <deque>
@@ -15,3 +16,6 @@ private:
     sf::Vector2f mDirection;
     void move();
 };
+
+
+#endif
