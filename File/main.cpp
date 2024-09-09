@@ -17,5 +17,6 @@ else
 {
     file << "Some text!" << endl;
 }
+file.close();
     return 0;
 }
