@@ -8,6 +8,18 @@ using std::string;
 class Human
 {
 public:
+Human()
+{
+    cout << "Default constructor without arguments" << this << endl;
+age = 0;
+name = " ";
+}
+Human(int _age, string _name) // default constructor with argument
+{
+   cout << "Default constructor with arguments"<< this << endl; 
+age = _age;
+name = _name;
+}
 void set_age(int _age)
 {
     age = _age;
@@ -31,7 +43,10 @@ int get_age()
 {
     return age;
 }
-
+~Human()
+{
+cout << "Destructor"<< this << endl;
+}
 private:
 int age;
 string name;
@@ -40,16 +55,12 @@ string name;
 
 int main()
 {
-Human man;
-man.set_age(19);
-man.set_name("ivan");
-man.show_data();
+Human man(19, "Ivan");
 
-Human woman;
-woman.set_age(20);
-woman.set_name("Maria");
-woman.set_age(21);
-woman.show_data();
+Human woman(20, "Maria");
+
+Human h;
+
 
     return 0;
 }
