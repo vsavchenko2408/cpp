@@ -4,23 +4,32 @@ using std::endl;
 
 class MyClass
 {
-public:
-void setx(int x)
-{
- this->x = x;
- cout << this << endl;   
-}
-private:
-int x;
+int* data;
 
+public:
+MyClass(){}
+MyClass(int value)
+{
+    cout << "Constr" << this << endl;
+    data = new int(value);
+}
+MyClass(const MyClass& obj)
+{
+    cout << "Constr Copy" << this << endl;
+    data = new int(*(obj.data));
+}
+~MyClass()
+{
+    delete data;
+    cout << "Destr" << this << endl;
+}
 }; 
 
 int main()
 {
-MyClass a;
-a.setx(10);
-MyClass b;
-cout << &a << endl;
+    MyClass a(10);
+    MyClass b = a;
+
 
     return 0;
 }
