@@ -1,9 +1,17 @@
 #include <iostream>
 
+
 int main()
 {
-int x = 0;
-std::cout << x++ - ++x << std::endl;
+int x;
+std::cin >> x;
+if(x<100)
+{
+    std::cout << x << std::endl;
+}
+else
+{
+    abort();
+}
 
-//    abort();
 }
