@@ -1,17 +1,22 @@
 #include <iostream>
 
+class A
+{
+int x=5;
+int y=6;
 
+friend void f();
+
+
+
+};
+
+void f(A& obj)
+{
+    std::cout << obj.x << " " << obj.y << std::endl;
+}
 int main()
 {
-int x;
-std::cin >> x;
-if(x<100)
-{
-    std::cout << x << std::endl;
-}
-else
-{
-    abort();
-}
-
+A a;
+f(a);
 }
