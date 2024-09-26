@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.0)
+project (bankaccount)
+
+# Добавление исходных файлов проекта
+set(SOURCES
+    main.cpp Person.cpp Account.cpp 
+    # Добавьте ваши файлы .cpp здесь
+)
+
+# Добавление заголовочных файлов проекта
+set(HEADERS
+Person.h Account.h
+    # Добавьте ваши файлы .h здесь
+)
+
+# Создание исполняемого файла
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
