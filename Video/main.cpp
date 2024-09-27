@@ -19,7 +19,7 @@ int main()
    
 Pointers p1(3,7);
 Pointers p2(4,7);
-cout << p1 + p2 << endl;
+cout << p1*p2 << p1 + p2 << endl;
 
 /*
 if(p1 > p2)

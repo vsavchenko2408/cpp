@@ -74,7 +74,7 @@ bool Pointers::operator>(const Pointers& other) const
 return((this->x + this->y) > (other.x + other.y));
 }
 
-std::ostream& operator<<(std::ostream& os, Pointers& obj)
+std::ostream& operator<<(std::ostream& os, const Pointers& obj)
 {
 os << "x: " << obj.x << "\n" << "y: " << obj.y << "\n";
 return os;
