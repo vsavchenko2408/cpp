@@ -19,6 +19,8 @@ int main()
    
 Pointers p1(3,7);
 Pointers p2(4,7);
+cout << p1 + p2 << endl;
+
 /*
 if(p1 > p2)
 {
@@ -30,8 +32,8 @@ else
 }
 */
 
-zero_coords(p1);
-p1.show();
+//zero_coords(p1);
+//p1.show();
 //cout << Pointers::count << endl;
 
 //cout << Pointers::count << endl;

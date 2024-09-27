@@ -31,6 +31,7 @@ Pointers operator%(const Pointers& other);
 bool operator==(const Pointers& other) const;
 bool operator<(const Pointers& other) const;
 bool operator>(const Pointers& other) const;
+friend std::ostream& operator<<(std::ostream& os, Pointers& obj);
 friend void zero_coords(Pointers& obj);
 };
 
