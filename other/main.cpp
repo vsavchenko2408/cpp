@@ -4,17 +4,17 @@ class A
 {
 int x=5;
 int y=6;
-
-friend void f();
-
-
+public:
+friend void f(A& obj);
 
 };
 
 void f(A& obj)
 {
-    std::cout << obj.x << " " << obj.y << std::endl;
+   std::cout <<  obj.x << std::endl;
+   std::cout <<  obj.y << std::endl;
 }
+
 int main()
 {
 A a;
