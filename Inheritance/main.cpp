@@ -1,76 +1,36 @@
 #include <iostream>
-using std::cout;
-using std::endl;
-using std::string;
-static int count=0;
-class Grandfather
-{
-public:
-Grandfather()
-{
 
-    count++;
-    cout << "Constructor GrandFather " << this << endl;
-}
-
-~Grandfather()
+class Parent
 {
-    count--;
-    cout << "Destructor GrandFather " << this << endl;
-}
 protected:
-string name;
-unsigned short age;
+    int m_data;
+
+public:
+    Parent(int data) : m_data(data) {}
+    Parent() : m_data(0) {}
+    int get_data()
+    {
+        return m_data;
+    }
 };
 
-class Father : protected Grandfather
+class Child : public Parent
 {
-public:
-Father()
-{
-    count++;
-    cout << "Constructor Father "<< this  << endl;
-}
-~Father()
-{
-     count--;
-    cout << "Destructor Father " << this << endl;
-}
-protected:
-bool car;
-};
+    int c_data;
 
-class Son : public Father
-{
 public:
+    Child(int c_data, int m_data) : c_data(c_data), Parent(m_data) {}
 
-Son()
-{
-    count++;
-    cout << "Constructor Son " << this << endl;
-}
-Son(string name, unsigned short age, bool car)
-{
-this->name = name;
-this->age = age;
-this->car = car;
-}
-~Son()
-{
-     count--;
-    cout << "Destructor Son "<< this  << endl;
-}
-private:
-bool toys;
+    void show_data() const
+    {
+        std::cout << "c_data: " << c_data << std::endl;
+        std::cout << "m_data: " << m_data << std::endl;
+    }
 };
 
 int main()
 {
-   
-Son human;
-
-
-cout << "Count: " << count << endl;
-
+    Child c(14, 23);
+    c.show_data();
     return 0;
 }
