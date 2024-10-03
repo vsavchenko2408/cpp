@@ -33,10 +33,6 @@ int main()
     // obj.msgOne;
     // obj.msgTwo;
     obj.show_msg();
-#ifdef _WIN32
-    system("pause");
-#elif __linux__
-    std::cout << "Press any key to clode!" << std::endl;
-#endif
+
     return 0;
 }
