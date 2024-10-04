@@ -7,32 +7,35 @@ using std::string;
 class Parent
 {
 public:
-    string msgOne = "Public";
+    Parent()
+    {
+        cout << __PRETTY_FUNCTION__ << endl;
+    }
 
-protected:
-    string msgTwo = "Protected";
-
-private:
-    string msgThree = "Protected";
+    ~Parent()
+    {
+        cout << __PRETTY_FUNCTION__ << endl;
+    }
 };
 
-class Child : private Parent
+class Child : public Parent
 {
-
 public:
-    void show_msg()
+    Child()
     {
-        cout << msgOne << endl;
-        cout << msgTwo << endl;
+        cout << __PRETTY_FUNCTION__ << endl;
+    }
+
+    ~Child()
+    {
+        cout << __PRETTY_FUNCTION__ << endl;
     }
 };
 
 int main()
 {
-    Child obj;
-    // obj.msgOne;
-    // obj.msgTwo;
-    obj.show_msg();
+   // Parent p;
+    Child c;
 
     return 0;
 }
