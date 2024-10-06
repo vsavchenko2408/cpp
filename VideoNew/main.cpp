@@ -3,7 +3,11 @@
 using std::cout;
 using std::endl;
 using std::string;
-
+/*
+FILO
+First input
+Last output
+*/
 class Parent
 {
 public:
@@ -36,6 +40,7 @@ int main()
 {
    // Parent p;
     Child c;
+    Parent p;
 
     return 0;
 }
