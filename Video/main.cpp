@@ -7,27 +7,35 @@ using std::endl;
 class Parent
 {
 public:
-  void show()
+  Parent()
   {
-    cout << "Parent!" << endl;
+    cout << "Constr Parent" << endl;
+  }
+  virtual ~Parent()
+  {
+    cout << "Destr Parent" << endl;
   }
 };
 
-class Child1 : virtual public Parent
+class Child : public Parent
 {
+  public:
+  Child()
+  {
+    cout << "Constr Child" << endl;
+  }
+  ~Child()
+  {
+    cout << "Destr Child" << endl;
+  }
 };
 
-class Child2 : virtual public Parent
-{
-};
 
-class Grandson : public Child1, public Child2
-{
-};
 int main()
 {
 
-  Grandson g;
-  g.show();
+Parent* ptr = new Child();
+
+delete ptr;
   return 0;
 }
