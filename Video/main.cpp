@@ -1,48 +1,42 @@
 #include <iostream>
 #include <fstream>
-
 using std::cin;
 using std::cout;
 using std::endl;
 
+class Pointer
+{
+public:
+  int x;
+  int y;
+  int z;
+  Pointer() = default;
+  Pointer(int x, int y, int z) : x(x), y(y), z(z) {}
+  void show()
+  {
+    cout << "\tx: " << x << "\ty: " << y << "\tz: " << z << endl;
+  }
+};
 int main()
 {
-  ///////////
-  std::ofstream ofile("MyFile.txt");
-  std::string ostr = "some text!";
+  std::string path = "/home/master/cpp/Video/file.bin";
+  Pointer ptr(13, 32, 18);
+  std::ofstream ofile(path, std::ios_base::binary);
   if (!ofile.is_open())
   {
-    std::cerr << "File not open for write!" << endl;
+    std::cerr << "File not open!" << endl;
   }
   else
   {
-    cout << "File opened and write!" << endl;
-    ofile << ostr;
+    cout << "File open and write!" << endl;
+    ofile.write((char *)&ptr, sizeof(Pointer));
   }
   ofile.close();
-  ////////////
-  std::ifstream ifile("MyFile.txt");
-  // std::string istr;
-  char c;
-  char str[50];
-  int count = 0;
-  if (!ifile.is_open())
-  {
-    std::cerr << "File nor open for read!" << endl;
-  }
-  else
-  {
-    cout << "File opened and read!" << endl;
-    while (ifile.get(c))
-    {
-      str[count] = c;
-      count++;
-    }
-    str[count] = '\0';
-    //  std::getline(ifile, istr);
-  }
-  cout << str << "\n";
-  // cout << istr << endl;
+  
+  Pointer iptr;
+  std::ifstream ifile(path, std::ios_base::binary);
+  ifile.read((char *)&iptr, sizeof(Pointer));
+  iptr.show();
   ifile.close();
   return 0;
 }
