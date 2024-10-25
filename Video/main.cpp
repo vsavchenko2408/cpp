@@ -17,38 +17,33 @@ public:
   {
     cout << "x: " << x << "\ty: " << y << "\tz: " << z << endl;
   }
+  friend std::ostream& operator<<(std::ostream& os, const Point obj);
 };
+
+std::ostream& operator<<(std::ostream& os, const Point obj) 
+{
+  os << "x: " << obj.x << "\ty: " << obj.y << "\tz: " << obj.z << endl;
+  return os;
+}
+
+std::istream& operator>>(std::istream& is, Point& obj)
+{
+  is >> obj.x >> obj.y >> obj.z;
+  return is;
+}
+
 
 int main()
 {
-Point pt(43,54,13);
-std::string path = "/home/master/cpp/Video/File.bin";
-std::ofstream ofile(path, std::ios_base::binary);
-if(ofile.is_open())
-{
-  ofile.write((char*)&pt,sizeof(Point));
-  cout << "File open and write!" << endl;
-}
-else
-{
-std::cerr << "Error! File not open!" << endl;
-}
+Point pt;
+cin >> pt;
+cout << pt;
+
+std::ofstream ofile("file.txt");
+ofile << pt;
 ofile.close();
-///////////////
-Point ptin;
-std::ifstream ifile(path, std::ios::binary);
-if(ifile.is_open())
-{
-  ifile.read((char*)&ptin,sizeof(Point));
-  cout << "File open and read!" << endl;
-}
-else
-{
-  std::cerr << "Error! File not open and read!" << endl;
-}
-ptin.show();
 
 
-ifile.close();
+
   return 0;
 }
