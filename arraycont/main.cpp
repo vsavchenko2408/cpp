@@ -1,5 +1,4 @@
 #include <iostream>
-#include <assert.h>
 using std::cin;
 using std::cout;
 using std::endl;
@@ -17,9 +16,15 @@ public:
     }
     IntArr(int length)
     {
-        assert(length > 0);
+        if(length > 0)
+        {
         m_length = length;
         arr = new int(length);
+        }
+        else
+        {
+            std::cerr << "Error!" << endl;
+        }
     }
     ~IntArr()
     {
