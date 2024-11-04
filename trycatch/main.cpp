@@ -12,10 +12,11 @@ int main()
     double d = 65.3434;
     char c = 'A';
     std::string str = "Error!";
+    std::exception ex;
     try
     {
 
-        throw str;
+        throw ex;
     }
     catch (int)
     {
