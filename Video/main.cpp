@@ -4,13 +4,24 @@
 using std::cin;
 using std::cout;
 using std::endl;
-void fillarray(int *ptr, const size_t N)
+void fillarray(int *ptr, const size_t N);
+void showarray(int *ptr, const size_t N);
+void swap(int &a, int &b);
+void sort(int *arr, const int N);
+
+int main()
 {
-  for (size_t i = 0; i < N; ++i)
-  {
-    ptr[i] = rand() % 100;
-  }
+  const size_t SIZE = 20;
+  srand(time(NULL));
+  int *arr = new int[SIZE];
+  fillarray(arr, SIZE);
+  showarray(arr, SIZE);
+  sort(arr, SIZE);
+  cout << "Sorted!" << endl;
+  showarray(arr, SIZE);
+  return 0;
 }
+
 void showarray(int *ptr, const size_t N)
 {
   for (size_t i = 0; i < N; ++i)
@@ -20,38 +31,30 @@ void showarray(int *ptr, const size_t N)
   cout << endl;
 }
 
-unsigned int sum(int *ptr, const size_t N)
+void fillarray(int *ptr, const size_t N)
 {
-  unsigned int sum = 0;
   for (size_t i = 0; i < N; ++i)
   {
-    sum += ptr[i];
+    ptr[i] = rand() % 1000;
   }
-  return sum;
 }
 
-int minvalue(int *ptr, const size_t N)
+void swap(int &a, int &b)
 {
-  int min = 100;
+  int temp = a;
+  a = b;
+  b = temp;
+}
+void sort(int *arr, const int N)
+{
   for (size_t i = 0; i < N; ++i)
   {
-    if (min > ptr[i])
+    for (size_t j = 0; j < N; ++j)
     {
-      min = ptr[i];
+      if (arr[i] < arr[j])
+      {
+        swap(arr[i], arr[j]);
+      }
     }
   }
-  return min;
-}
-
-int main()
-{
-  const size_t SIZE = 10;
-  srand(time(NULL));
-  int *arr = new int[SIZE];
-  fillarray(arr, SIZE);
-  showarray(arr, SIZE);
-  cout << "Result: " << sum(arr, SIZE) << endl;
-  cout << "Min value: " << minvalue(arr, SIZE) << endl;
-  
-  return 0;
 }
