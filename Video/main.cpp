@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include <random>
 
 using std::cin;
@@ -7,7 +8,8 @@ using std::endl;
 void fillarray(int *ptr, const size_t N);
 void showarray(int *ptr, const size_t N);
 void swap(int &a, int &b);
-void sort(int *arr, const int N);
+//void sort(int *arr, const int N);
+bool comp(int& a, int& b);
 
 int main()
 {
@@ -16,9 +18,11 @@ int main()
   int *arr = new int[SIZE];
   fillarray(arr, SIZE);
   showarray(arr, SIZE);
-  sort(arr, SIZE);
+  //sort(arr, SIZE);
+  std::sort(arr, arr+SIZE,comp);
   cout << "Sorted!" << endl;
   showarray(arr, SIZE);
+  
   return 0;
 }
 
@@ -45,16 +49,22 @@ void swap(int &a, int &b)
   a = b;
   b = temp;
 }
+bool comp(int& a, int& b)
+{
+return a>b;
+}
+/*
 void sort(int *arr, const int N)
 {
-  for (size_t i = 0; i < N; ++i)
+  for (size_t i = 0; i < N -1 ; ++i)
   {
-    for (size_t j = 0; j < N; ++j)
+    for (size_t j = i +1 ; j < N; ++j)
     {
-      if (arr[i] < arr[j])
+      if (arr[i] > arr[j])
       {
         swap(arr[i], arr[j]);
       }
     }
   }
 }
+*/
