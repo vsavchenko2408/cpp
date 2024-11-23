@@ -39,7 +39,7 @@ a.set_x(15);
 b.set_x(10);
 
 a = a+b;
-cout << a.get_x();
+cout << a.get_x() << endl;
 
     return 0;
 }
