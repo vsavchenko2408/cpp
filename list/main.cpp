@@ -1,39 +1,85 @@
 #include <iostream>
-#include <list>
-using std::endl;
-using std::cout;
-using std::list;
-
-void prntlst(const list<int> &lst)
+template<class T>
+class List
 {
+private:
+//////////
+    template <class U>
+    class Node
+    {
+    public:
+        Node* pNext;
+        U data;
+        Node(U data =U() , Node *pNext = nullptr): data(data), pNext(pNext)
+        {
 
-list<int>::const_iterator i ;
-for(i= lst.begin();i != lst.end(); i++)
-{
-cout << *i << endl;
+        }
+        ~Node(){}
 
-}
+    };
+    //////////////////
+
+    size_t SIZE;
+    Node<T> *head;
+public:
+    List()
+    {
+        SIZE = 0;
+        head = nullptr;
+    }
+    ~List(){}
+    size_t getsize()
+    {
+        return SIZE;
+    }
+    void push_back(T data)
+    {
+    if(head == nullptr)
+        {
+            head = new Node<T>(data);
+        }
+    else
+        {
+        Node<T> *temp = this->head;
+            while(temp->pNext != nullptr)
+            {
+            temp = temp->pNext;
+            }
+            temp->pNext = new Node<T> (data);
+        }
+        SIZE++;
+    }
+    T& operator[](const int index)
+    {
+        size_t count = 0;
+        Node<T> *temp = this->head;
+        while(temp!=nullptr)
+        {
+            if(count == index)
+            {
+                return temp->data;
+            }
+            temp = temp->pNext;
+            count++;
+        }
+
+    }
+    T operator*()
+    {
+        return head->data;
+    }
+};
 
 
-}
+
+
 int main()
 {
-list<int> lst = {54,32,76,45,65,12,54,54,43,76,72,83};
-list<int>::iterator it = lst.begin();
-lst.push_back(13);
-lst.push_front(1);
-lst.insert(it , 5);
-lst.pop_front();
-lst.pop_back();
-//lst.erase(it);
-//lst.sort();
-lst.unique();
-prntlst(lst);
-/*
-cout << *it << endl;
-advance(it, 4);
-advance(it,1);
-cout << *it << endl;
-*/
+    List<int> lst;
+    lst.push_back(15);
+    lst.push_back(4);
+
+
+    std::cout << lst[1] << std::endl;
     return 0;
 }
