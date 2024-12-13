@@ -1,15 +1,15 @@
 #include <iostream>
-#include <forward_list>
+#include <list>
 using std::cout;
+using std::list;
 using std::endl;
-using std::forward_list;
 
 int main()
 {
-    forward_list<int> v{10, 20, 30, 40, 50};
-    forward_list<int>::iterator it = v.begin();
-
-    for (auto i: v)
+    list<int> v{10, 20, 30, 40, 50};
+    list<int>::iterator it = v.begin();
+    
+    for (size_t i =0; i < v.size(); ++i)
     {
         cout << *it << endl;
         ++it;
