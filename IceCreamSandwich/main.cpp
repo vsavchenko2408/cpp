@@ -31,14 +31,14 @@ int main() {
     setlocale(LC_ALL, "RU");
     std::string str;
 
-    std::cout << "������� ������: ";
+    std::cout << "Input string: ";
     std::cin >> str;
 
     if (isIcecreamSandwich(str)) {
-        std::cout << "��� ������� � ���������." << std::endl;
+        std::cout << "It is a Sandwich!" << std::endl;
     }
     else {
-        std::cout << "��� �� ������� � ���������." << std::endl;
+        std::cout << "It is not a Sandwich!" << std::endl;
     }
 
     return 0;
