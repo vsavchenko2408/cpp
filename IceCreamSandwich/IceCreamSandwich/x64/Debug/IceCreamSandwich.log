@@ -1,3 +1,0 @@
-﻿  Source.cpp
-E:\My Projects\IceCreamSandwich\IceCreamSandwich\Source.cpp(14,16): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-  IceCreamSandwich.vcxproj -> E:\My Projects\IceCreamSandwich\x64\Debug\IceCreamSandwich.exe
