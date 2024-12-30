@@ -5,7 +5,7 @@
 int main()
 {
     size_t count = 0;
-    while (count != 1000)
+    while (count != 10)
     {
         std::cout << "1";
         usleep(10000);
