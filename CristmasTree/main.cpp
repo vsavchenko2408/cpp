@@ -15,7 +15,7 @@ int main()
         }
         std::cout << std::endl;
     }
-    for (size_t l = 0; l < 15 - 1; ++l)
+    for (size_t l = 0; l < 14 - 1; ++l)
     {
         std::cout << " ";
     }
