@@ -1,27 +1,27 @@
 #include <iostream>
-#include <cstdlib>
-#include <unistd.h>
+
 
 int main()
 {
-    size_t count = 0;
-    while (count != 10)
+    const int N = 3;
+    const int M = 4;
+    int arr[N][M];
+    for(size_t i =0;i<N;++i)
     {
-        std::cout << "1";
-        usleep(10000);
-        std::system("clear");
-        std::cout << '2';
-        usleep(10000);
-        std::system("clear");
-        // std::cout << '\n';
-        std::cout << '3';
-        usleep(10000);
-        std::system("clear");
-        // std::cout << '\n';
-        std::cout << '4';
-        usleep(10000);
-        std::system("clear");
-        count++;
+        for(size_t j = 0; j < M; ++j)
+        {
+            arr[i][j] = i*M+j;
+        }
     }
+    for(size_t i =0;i<N;++i)
+    {
+        for(size_t j = 0; j < M; ++j)
+        {
+           std::cout <<  arr[i][j];
+        }
+        std::cout << std::endl;
+    }
+
+
     return 0;
 }
