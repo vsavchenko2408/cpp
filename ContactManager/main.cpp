@@ -1,58 +1,55 @@
 #include <iostream>
 #include <fstream>
-
+#include <map>
 using std::cin;
 using std::cout;
 using std::endl;
+using std::make_pair;
+using std::map;
 using std::string;
-
 string fileaddress = "Contacts.txt";
+std::fstream fs;
 class Contact
 {
 private:
-    string name;
-    string phonenumber;
+    map<string, string> contacts;
 
 public:
-    Contact() = default;
-    Contact(string name, string phonenumber) : name(name), phonenumber(phonenumber)
+    Contact()
     {
-        std::fstream fs;
-        fs.open(fileaddress, std::ios_base::app);
-        if (fs.is_open())
-        {
-            fs << endl
-               << name << endl
-               << phonenumber << endl;
-        }
-        else
-        {
-            std::cerr << "File is not open!" << endl;
-        }
-        fs.close();
+        contacts.emplace("noname", "empty");
     }
-    bool CreateContact(string name, string phonenumber)
+    Contact(string name, string number)
     {
-        std::fstream fs(fileaddress, std::ios_base::app);
+        contacts.emplace(name, number);
+    }
+    void create_contact(string name, string number)
+    {
+        contacts.emplace(name, number);
+    }
+    void to_file()
+    {
+        fs.open(fileaddress, std::ios_base::out);
         if (fs.is_open())
         {
-            fs << endl
-               << name << endl
-               << phonenumber << endl;
-            return true;
+            for (const auto &i : contacts)
+            {
+                fs << i.first << endl;
+                fs << i.second << endl;
+            }
+            fs.close();
         }
         else
         {
-            std::cerr << "File dont open! " << endl;
-            return false;
+            std::cerr << "File dont open!" << endl;
         }
-        fs.close();
-        return false;
     }
 };
 
 int main()
 {
-    Contact Mira;
-    Mira.CreateContact("Miroslava", "+380673398626");
+    Contact Mira("Miroslava", "+380673398626");
+    Contact Viacheslav("Viacheslav", "+380977087929");
+    Viacheslav.to_file();
+    Mira.to_file();
 }
