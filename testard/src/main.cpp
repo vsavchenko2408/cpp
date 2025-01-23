@@ -1,21 +1,36 @@
-#include <Arduino.h>
-const int led = 13;
+#include <Wire.h>
+#include <MPU6050.h>
 
-void setup()
-{
-  pinMode(led, OUTPUT);
+MPU6050 mpu;
+
+void setup() {
   Serial.begin(9600);
+  Wire.begin();
+
+  // Инициализация MPU-6050
+  Serial.println("Инициализация MPU6050...");
+  mpu.initialize();
+  
+  if (!mpu.testConnection()) {
+    Serial.println("Ошибка: MPU6050 не подключен!");
+    while (1);
+  }
+
+  Serial.println("MPU6050 успешно подключен!");
 }
 
-void loop() 
-{
-  /*
-  digitalWrite(led, HIGH);
-   Serial.println("HIGH");
-  delay(1000);
-  digitalWrite(led, LOW);
-   Serial.println("LOW");
-  delay(1000);
- */
+void loop() {
+  int16_t ax, ay, az;
+  
+  // Чтение данных акселерометра
+  mpu.getAcceleration(&ax, &ay, &az);
 
+  Serial.print("Ax: ");
+  Serial.print(ax);
+  Serial.print(" | Ay: ");
+  Serial.print(ay);
+  Serial.print(" | Az: ");
+  Serial.println(az);
+
+  delay(500);
 }
