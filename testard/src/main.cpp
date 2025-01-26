@@ -1,36 +1,23 @@
-#include <Wire.h>
-#include <MPU6050.h>
+const int buttonPin = 2;
+const int led = 13;
 
-MPU6050 mpu;
-
-void setup() {
-  Serial.begin(9600);
-  Wire.begin();
-
-  // Инициализация MPU-6050
-  Serial.println("Инициализация MPU6050...");
-  mpu.initialize();
-  
-  if (!mpu.testConnection()) {
-    Serial.println("Ошибка: MPU6050 не подключен!");
-    while (1);
-  }
-
-  Serial.println("MPU6050 успешно подключен!");
+int butt = 0;
+void setup()
+{
+  pinMode(led, OUTPUT);
+  pinMode(buttonPin, INPUT);
 }
 
-void loop() {
-  int16_t ax, ay, az;
-  
-  // Чтение данных акселерометра
-  mpu.getAcceleration(&ax, &ay, &az);
+void loop()
+{
+  butt = digitalRead(buttonPin);
 
-  Serial.print("Ax: ");
-  Serial.print(ax);
-  Serial.print(" | Ay: ");
-  Serial.print(ay);
-  Serial.print(" | Az: ");
-  Serial.println(az);
-
-  delay(500);
+  if (butt == HIGH)
+  {
+    digitalWrite(led, HIGH);
+  }
+  else
+  {
+    digitalWrite(led, LOW);
+  }
 }
