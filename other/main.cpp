@@ -1,32 +1,58 @@
 #include <iostream>
-#include <algorithm>
-#include <deque>
-#include <random>
+#include <chrono>
+#include <thread>
+using namespace std;
 
-using std::cout;
-using std::deque;
-using std::endl;
+const unsigned int COL = 10;
+const unsigned int ROW = 10;
 
-bool cmp(int a)
+void fillarr(char arr[COL][ROW])
 {
-    return a == 12;
+    for (size_t i = 0; i < COL; ++i)
+    {
+        for (size_t j = 0; j < ROW; ++j)
+        {
+            arr[i][j] = ' ';
+        }
+    }
+}
+
+void draw(char arr[COL][ROW])
+{
+    cout << "\033[1;1H";
+    for (size_t i = 0; i < COL; ++i)
+    {
+        for (size_t j = 0; j < ROW; ++j)
+        {
+            cout << arr[i][j];
+        }
+        cout << endl;
+    }
+}
+
+void run(char arr[COL][ROW])
+{
+    for (size_t i = 0; i < COL; ++i)
+    {
+
+        for (size_t j = 0; j < ROW; ++j)
+        {
+            arr[j][i] = '*';
+            std::this_thread::sleep_for(chrono::milliseconds(100));
+            draw(arr);
+            arr[j][i] = ' ';
+        }
+    }
 }
 int main()
 {
-    srand(time_t(nullptr));
-    deque<int> dq;
-    for (size_t i = 0; i < 10; ++i)
-    {
-        dq.emplace_back(rand() % 50);
-    }
 
-    auto findif = std::remove_if(dq.begin(), dq.end(), cmp);
-    cout << *findif << endl
-         << endl;
-    for (auto &i : dq)
+    char arr[COL][ROW];
+    while (true)
     {
-        cout << i << " ";
+        fillarr(arr);
+        std::cout << "\033[2J\033[1;1H";
+        run(arr);
     }
     return 0;
-    system("pause");
 }
