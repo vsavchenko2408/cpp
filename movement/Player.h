@@ -3,17 +3,15 @@
 
 class Player
 {
-    public:
-    struct coord
-    {
-        int x = 0;
-        int y = 0;
-    } coord;
-
+public:
+    int x = 0;
+    int y = 0;
 
     Player();
     void step(char step);
-    Player get_coord();
+    int get_xcoord();
+    int get_ycoord();
+
 };
 
 #endif

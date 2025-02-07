@@ -11,7 +11,7 @@ void Field::fill_field(Player &obj)
             {
                 field[i][j] = ' ';
             }
-            else if (obj.coord.x == i && obj.coord.y == j)
+            else if (obj.x == i && obj.y == j)
             {
                 field[i][j] = 'p';
             }

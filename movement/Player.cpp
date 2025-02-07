@@ -2,8 +2,8 @@
 ///
 Player::Player()
 {
-    coord.x = 5;
-    coord.y = 5;
+    int x = 5;
+    int y = 5;
 }
 ///
 void Player::step(char step)
@@ -11,25 +11,29 @@ void Player::step(char step)
     switch (step)
     {
     case 'a':
-        coord.y--;
+        y--;
         break;
     case 's':
-        coord.x--;
+        x--;
         break;
     case 'd':
-        coord.y++;
+        y++;
         break;
     case 'w':
-        coord.x++;
+        x++;
         break;
     default:
-        coord.x;
-        coord.y;
+        x;
+        y;
     }
 }
 ///
 
-Player Player::get_coord()
+int Player::get_xcoord()
 {
-    return *this;
+    return x;
+}
+int Player::get_ycoord()
+{
+    return y;
 }
