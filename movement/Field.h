@@ -9,8 +9,8 @@ class Field
     char field[50][50];
 
 public:
-    void fill_field(Player &obj);
-    void draw_field();
+    void fill_field();
+    void draw_field(Player &obj);
 };
 
 #endif

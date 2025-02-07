@@ -5,7 +5,7 @@ int main()
 {
     Field fl;
     Player pl;
-    fl.fill_field(pl);
-    fl.draw_field();
+    fl.fill_field();
+    fl.draw_field(pl);
     return 0;
 }

@@ -1,6 +1,6 @@
 #include "Field.h"
 
-void Field::fill_field(Player &obj)
+void Field::fill_field()
 {
     for (size_t i = 0; i < 50; ++i)
     {
@@ -11,10 +11,6 @@ void Field::fill_field(Player &obj)
             {
                 field[i][j] = ' ';
             }
-            else if (obj.x == i && obj.y == j)
-            {
-                field[i][j] = 'p';
-            }
             else
             {
                 field[i][j] = '#';
@@ -23,12 +19,16 @@ void Field::fill_field(Player &obj)
     }
 }
 
-void Field::draw_field()
+void Field::draw_field(Player &obj)
 {
     for (size_t i = 0; i < 50; ++i)
     {
         for (size_t j = 0; j < 50; ++j)
         {
+            if (obj.x == i && obj.y == j)
+            {
+                field[i][j] = 'p';
+            }
             std::cout << field[i][j];
         }
         std::cout << std::endl;
