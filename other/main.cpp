@@ -1,58 +1,43 @@
 #include <iostream>
+#include <vector>
 #include <chrono>
 #include <thread>
-using namespace std;
-
-const unsigned int COL = 10;
-const unsigned int ROW = 10;
-
-void fillarr(char arr[COL][ROW])
+#include <random>
+#include <mutex>
+std::mutex m;
+void fillvector(std::vector<int> &v)
 {
-    for (size_t i = 0; i < COL; ++i)
+    m.lock();
+    for (auto &i : v)
     {
-        for (size_t j = 0; j < ROW; ++j)
-        {
-            arr[i][j] = ' ';
-        }
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        i = rand() % 99;
     }
+    m.unlock();
 }
-
-void draw(char arr[COL][ROW])
+void showvector(std::vector<int> &v)
 {
-    cout << "\033[1;1H";
-    for (size_t i = 0; i < COL; ++i)
+    m.lock();
+    for (auto &i : v)
     {
-        for (size_t j = 0; j < ROW; ++j)
-        {
-            cout << arr[i][j];
-        }
-        cout << endl;
+        std::cout << i << " ";
     }
-}
-
-void run(char arr[COL][ROW])
-{
-    for (size_t i = 0; i < COL; ++i)
-    {
-
-        for (size_t j = 0; j < ROW; ++j)
-        {
-            arr[j][i] = '*';
-            std::this_thread::sleep_for(chrono::milliseconds(100));
-            draw(arr);
-            arr[j][i] = ' ';
-        }
-    }
+    std::cout << std::endl;
+    m.unlock();
 }
 int main()
 {
 
-    char arr[COL][ROW];
-    while (true)
-    {
-        fillarr(arr);
-        std::cout << "\033[2J\033[1;1H";
-        run(arr);
-    }
+    srand(time(NULL));
+    std::vector<int> MyVec(10);
+
+    std::thread th_fill([&]()
+                        { fillvector(MyVec); });
+
+    std::thread th_show([&]()
+                        { showvector(MyVec); });
+
+    th_fill.join();
+    th_show.join();
     return 0;
 }
