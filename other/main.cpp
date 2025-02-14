@@ -5,39 +5,27 @@
 #include <random>
 #include <mutex>
 std::mutex m;
-void fillvector(std::vector<int> &v)
+void show(char symb)
 {
-    m.lock();
-    for (auto &i : v)
+    // m.lock();
+    for (size_t i = 0; i < 10; ++i)
     {
-        std::this_thread::sleep_for(std::chrono::milliseconds(500));
-        i = rand() % 99;
+        for (size_t j = 0; j < 10; ++j)
+        {
+            std::cout << symb;
+            // std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        }
+        std::cout << std::endl;
     }
-    m.unlock();
-}
-void showvector(std::vector<int> &v)
-{
-    m.lock();
-    for (auto &i : v)
-    {
-        std::cout << i << " ";
-    }
-    std::cout << std::endl;
-    m.unlock();
+    // m.unlock();
 }
 int main()
 {
+    std::thread th1(show, '*');
+    std::thread th2(show, '#');
 
-    srand(time(NULL));
-    std::vector<int> MyVec(10);
+    th1.join();
+    th2.join();
 
-    std::thread th_fill([&]()
-                        { fillvector(MyVec); });
-
-    std::thread th_show([&]()
-                        { showvector(MyVec); });
-
-    th_fill.join();
-    th_show.join();
     return 0;
 }
