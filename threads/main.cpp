@@ -6,17 +6,22 @@ std::mutex m;
 
 void show(char symbol)
 {
-    m.lock();
-    for (size_t i = 0; i < 10; ++i)
+
     {
-        for (size_t j = 0; j < 10; ++j)
+        // m.lock();
+        std::lock_guard<std::mutex> guard(m);
+        for (size_t i = 0; i < 10; ++i)
         {
-            std::this_thread::sleep_for(std::chrono::milliseconds(25));
-            std::cout << symbol;
+            for (size_t j = 0; j < 10; ++j)
+            {
+                std::this_thread::sleep_for(std::chrono::milliseconds(25));
+                std::cout << symbol;
+            }
+            std::cout << std::endl;
         }
-        std::cout << std::endl;
     }
-    m.unlock();
+    // m.unlock();
+    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 }
 
 int main()
