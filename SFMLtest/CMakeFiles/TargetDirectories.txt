@@ -1,0 +1,3 @@
+/home/master/Repositories/cpp/SFMLtest/CMakeFiles/MyGame.dir
+/home/master/Repositories/cpp/SFMLtest/CMakeFiles/edit_cache.dir
+/home/master/Repositories/cpp/SFMLtest/CMakeFiles/rebuild_cache.dir
