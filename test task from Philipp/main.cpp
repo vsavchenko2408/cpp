@@ -4,8 +4,8 @@
 #include <time.h>
 
 /*
-You are given a locked container represented as a two-dimensional grid of boolean values (true = locked, false = unlocked). 
-Your task is to write an algorithm that fully unlocks the box, i.e., 
+You are given a locked container represented as a two-dimensional grid of boolean values (true = locked, false = unlocked).
+Your task is to write an algorithm that fully unlocks the box, i.e.,
 transforms the entire matrix into all false.
 
 Implement the function:
@@ -29,18 +29,17 @@ private:
     std::vector<std::vector<bool>> box;
 
 public:
-
     //================================================================================
     // Constructor: SecureBox
-    // Description: Initializes the secure box with a given size and 
-    //              shuffles its state using a pseudo-random number generator 
+    // Description: Initializes the secure box with a given size and
+    //              shuffles its state using a pseudo-random number generator
     //              seeded with current time.
     //================================================================================
-    SecureBox(uint32_t x, uint32_t y): xSize(x), ySize(y)
+    SecureBox(uint32_t x, uint32_t y) : xSize(x), ySize(y)
     {
         rng.seed(time(0));
         box.resize(y);
-        for (auto& it : box)
+        for (auto &it : box)
             it.resize(x);
         shuffle();
     }
@@ -61,7 +60,7 @@ public:
 
     //================================================================================
     // Method: isLocked
-    // Description: Returns true if any cell 
+    // Description: Returns true if any cell
     //              in the box is true (locked); false otherwise.
     //================================================================================
     bool isLocked()
@@ -89,7 +88,7 @@ private:
 
     //================================================================================
     // Method: shuffle
-    // Description: Randomly toggles cells in the box to 
+    // Description: Randomly toggles cells in the box to
     // create an initial locked state.
     //================================================================================
     void shuffle()
@@ -113,12 +112,21 @@ bool openBox(uint32_t x, uint32_t y)
 
     // PLEASE, PROVIDE YOUR SOLUTION HERE
     // ...
+    do
+    {
+        for (size_t i = x; x >= 0; --x)
+        {
+            for (size_t j = y; y >= 0; --y)
+            {
+                box.toggle(x, y);
+            }
+        }
+    } while (box.isLocked());
 
     return box.isLocked();
 }
 
-
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
     uint32_t x = std::atol(argv[1]);
     uint32_t y = std::atol(argv[2]);
@@ -129,6 +137,5 @@ int main(int argc, char* argv[])
     else
         std::cout << "BOX: OPENED!" << std::endl;
 
-    return state; 
+    return state;
 }
-
