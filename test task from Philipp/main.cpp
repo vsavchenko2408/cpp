@@ -112,25 +112,28 @@ bool openBox(uint32_t x, uint32_t y)
 
     // PLEASE, PROVIDE YOUR SOLUTION HERE
     // ...
-    do
+    auto state = box.getState();
+
+    for (uint32_t i = 0; i < state.size(); ++i)
     {
-        for (size_t i = x; x >= 0; --x)
+        for (uint32_t j = 0; j < state[i].size(); ++j)
         {
-            for (size_t j = y; y >= 0; --y)
+            if (state[i][j])
             {
-                box.toggle(x, y);
+                box.toggle(i, j);
             }
         }
-    } while (box.isLocked());
+    }
 
     return box.isLocked();
 }
 
 int main(int argc, char *argv[])
 {
-    uint32_t x = std::atol(argv[1]);
-    uint32_t y = std::atol(argv[2]);
-    bool state = openBox(x, y);
+   // uint32_t x = std::atol(argv[1]);
+   // uint32_t y = std::atol(argv[2]);
+
+    bool state = openBox(5, 5);
 
     if (state)
         std::cout << "BOX: LOCKED!" << std::endl;
