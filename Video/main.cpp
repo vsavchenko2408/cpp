@@ -9,21 +9,37 @@ class MyClass
   int *data;
 
 public:
+  // Constructor
   MyClass(int d)
   {
     data = new int(d);
   };
 
-  ~MyClass() // 1
+  // Destructor
+  ~MyClass()
   {
     delete data;
-    data = nullptr;
   }
 
+  // Copy constructor
   MyClass(const MyClass &obj)
   {
     data = new int(*obj.data);
   }
+  // Move constructor
+  MyClass(MyClass &&obj)
+  {
+    data = obj.data;
+    obj.data = nullptr;
+  }
+  // Move operator
+  MyClass &operator=(MyClass &&obj)
+  {
+    data = obj.data;
+    obj.data = nullptr;
+    return *this;
+  }
+  // Copy operator
   MyClass &operator=(const MyClass &obj)
   {
     if (this != &obj)
@@ -33,16 +49,20 @@ public:
     }
     return *this;
   }
+
   void show()
   {
     std::cout << "data: " << *data << std::endl;
   }
 };
+
 int main()
 {
+
   MyClass a(15);
   MyClass b(a);
-  //a.~MyClass();
+  MyClass c = a;
   b.show();
+  c.show();
   return 0;
 }
