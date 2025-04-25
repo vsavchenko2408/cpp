@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+
 class Data
 {
     int m_data;
@@ -35,7 +36,7 @@ public:
     MyClass(const MyClass &obj)
     {
         ptr_data = new Data(*obj.ptr_data);
-        // std::cout << "Copy Constr MyClass" << std::endl;
+         std::cout << "Copy Constr MyClass" << std::endl;
     }
     ~MyClass()
     {
@@ -43,10 +44,13 @@ public:
         // std::cout << "Destructor MyClass" << std::endl;
     }
 };
-
+void foo(MyClass obj)
+{
+    //MyClass b(obj);
+}
 int main()
 {
-    std::vector<MyClass> v;
-    v.push_back(MyClass{});
+    MyClass a;
+    foo(a);
     return 0;
 }
