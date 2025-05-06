@@ -3,27 +3,37 @@
 
 int main()
 {
-    // Створюємо вікно з можливістю малювання
     sf::RenderWindow game(sf::VideoMode(800, 600), "Test window");
-
-    // Цикл, поки вікно відкрите
+    sf::Vector2f rectsize(100.0f, 50.0f);
+    sf::RectangleShape rect(rectsize);
+    sf::Vector2f rectPosition(200.0f, 100.0f);
+    sf::Font font;
+    font.loadFromFile("/home/master/Repositories/cpp/SFMLtest/arial.ttf");
+    sf::Text txt;
+    txt.setFont(font);
+    txt.setPosition(200.0f, 100.0f);
+    txt.setString("Text");
+    txt.setCharacterSize(16);
+    txt.setFillColor(sf::Color::White);
+    txt.setStyle(sf::Text::Bold | sf::Text::Underlined);
     while (game.isOpen())
     {
         sf::Event event;
         while (game.pollEvent(event))
         {
-            // Закриваємо вікно, якщо натиснута кнопка закриття
             if (event.type == sf::Event::Closed)
+            {
                 game.close();
+            }
         }
 
-        game.clear(sf::Color::White);
-        sf::CircleShape circle(50.0f);
-        circle.setFillColor(sf::Color::Black);
-        circle.move(15, 15);
-        game.draw(circle);
+        game.clear(sf::Color::Black);
+        rect.setFillColor(sf::Color::Green);
+        rect.setPosition(rectPosition);
 
-        // Відображаємо все, що було намальовано на екрані
+
+        game.draw(rect);
+        game.draw(txt);
         game.display();
     }
 
