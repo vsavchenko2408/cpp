@@ -1,31 +1,34 @@
 #include <iostream>
-using std::cout;
 using std::cin;
+using std::cout;
 using std::endl;
 
-class A
+class Singletone
 {
-A(){}
-A(A &obj){}
 
-int data;
+    static Singletone *ptr_instance;
+    Singletone() = default;
+
 public:
-A(int _data)
-{
-    data = _data;
-}
-int get_data()
-{
-    return data;
-}
+    Singletone(const Singletone &) = delete;
+    Singletone operator=(const Singletone &) = delete;
+    ~Singletone() = default;
+    static Singletone *get_instance()
+    {
+        if (ptr_instance == nullptr)
+        {
+            ptr_instance = new Singletone();
+        }
+        return ptr_instance;
+    }
 };
+
+Singletone *Singletone::ptr_instance = nullptr;
 
 int main()
 {
-
-A obj(10);
-
-
-
+    Singletone *ptr = Singletone::get_instance();
+    cout << "Adress: " << &ptr << endl;
+    delete ptr;
     return 0;
 }
