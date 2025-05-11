@@ -25,5 +25,6 @@ int main()
    cout << "f = " << MyUn.f << endl;
    cout << "d = " << MyUn.d << endl;
    cout << "c = " << MyUn.c << endl;
+   system("pause");
     return 0;
 }
