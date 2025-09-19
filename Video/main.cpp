@@ -20,14 +20,14 @@ private:
 public:
   Data() : m_data(nullptr) {}
   Data(int data) : m_data(new int(data)) {}
-  Data(Data &copy) : m_data(new int(*copy.m_data)) { std::cout << __PRETTY_FUNCTION__ << std::endl; } // copy constr
-  Data operator=(const Data &copy)                                                                    // copy operator
+  Data(const Data &copy) : m_data(new int(*copy.m_data)) { std::cout << __PRETTY_FUNCTION__ << std::endl; } // copy constr
+  Data &operator=(const Data &copy)                                                                         // copy operator
   {
     std::cout << __PRETTY_FUNCTION__ << std::endl;
     if (this != &copy)
     {
       delete m_data;
-      m_data = copy.m_data;
+      m_data = new int(*copy.m_data);
     }
     return *this;
   }
@@ -41,15 +41,19 @@ public:
     std::cout << __PRETTY_FUNCTION__ << std::endl;
     if (this != &move)
     {
-      m_data = nullptr;
-      m_data = new int(*move.m_data);
+      delete m_data;
+      m_data = move.m_data;
       move.m_data = nullptr;
     }
     return *this;
   }
   int get_data()
   {
-    return *m_data;
+    if (m_data)
+    {
+      return *m_data;
+    }
+    throw std::runtime_error("Data is null!");
   }
   ~Data() // destructor
   {
@@ -59,9 +63,16 @@ public:
 };
 int main()
 {
-  Data a(15);
-  Data b(a);
-  Data c(std::move(a));
-  c.get_data();
+  try
+  {
+    Data a(15);
+    Data b(a);
+    Data c(std::move(a));
+    c.get_data();
+  }
+  catch (const std::exception &ex)
+  {
+    std::cerr << ex.what() << "Error!" << std::endl;
+  }
   return 0;
 }
