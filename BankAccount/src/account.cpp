@@ -1,15 +1,15 @@
 #include "account.h"
 
-int Account::ID = 0; // Static member initialization
+int Account::s_next_id = 1; // Починаємо з 1
 
-Account::Account() : m_name("nobody"), m_money(0), m_age(14)
-    {
-        ID++;
-    }
-    Account::Account(double money, std::string name, size_t age) : m_money(money), m_name(name), m_age(age)
-    {
-        ID++;
-    }
+Account::Account() : m_name("nobody"), m_money(0), m_age(14), m_id(s_next_id++)
+{
+}
+
+Account::Account(double money, std::string name, size_t age) 
+    : m_money(money), m_name(name), m_age(age), m_id(s_next_id++)
+{
+}
 
 
     bool Account::draft_money(double draft)
@@ -29,4 +29,17 @@ Account::Account() : m_name("nobody"), m_money(0), m_age(14)
     float Account::get_money()
     {
         return m_money;
+    }
+    int Account::get_ID()
+    {
+        return m_id;
+    }
+    std::string Account::get_name()
+    {
+        return m_name;
+    }
+
+    size_t Account::get_age()
+    {
+        return m_age;
     }
