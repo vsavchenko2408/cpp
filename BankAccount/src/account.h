@@ -12,11 +12,11 @@ class Account
     static int s_next_id; // Статичний лічильник для генерації нових ID
     public:
     Account() ;
-    Account(double money, std::string name, size_t age) ;
-    Account(Account&) = delete;
-    Account& operator=(Account&) = delete;
-    Account& operator=(Account&&) = delete;
-    Account(Account&&) = delete;
+    Account(double money, std::string name, size_t age);
+    //Account(Account&) = delete;
+    //Account& operator=(Account&) = delete;
+    //Account& operator=(Account&&) = delete;
+    //Account(Account&&) = delete;
     bool draft_money(double draft);
     float get_money(); 
     int get_ID();
