@@ -1,7 +1,7 @@
 #ifndef ACCOUNT_H
 #define ACCOUNT_H
 #include <iostream>
-
+#include <fstream>
 class Account
 {
     
@@ -22,6 +22,9 @@ class Account
     int get_ID() const;
     std::string get_name() const;
     size_t get_age() const;
+    
+    // Перевантаження оператора << для виводу в потік
+    friend std::ostream& operator<<(std::ostream& os, const Account& account);
 };
 
 #endif

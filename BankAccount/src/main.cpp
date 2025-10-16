@@ -33,7 +33,7 @@ int main()
     accounts.create_account(2500, "John", 15);
     accounts.create_account(3500, "Sara", 19);
     accounts.show_all_accounts();
-    
+    accounts.save_database();
     #endif
 
     return 0;

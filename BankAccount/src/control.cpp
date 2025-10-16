@@ -27,20 +27,21 @@
 
     bool control::save_database()
     {
-        file_database.open("Database.bin", file_database.binary | file_database.in | file_database.out);
+        file_database.open("Database.bin",std::ios::out);
         if(file_database.is_open())
         {
         for(auto it : acc_database)
         {
             file_database << it << std::endl;
         }
-
+        std::cout << "Database is saved" << std::endl;
         file_database.close();
         return true;
         }
         else
         {
             std::cerr << "Dont open file!" << std::endl;
+            file_database.close();
             return false;
         }
 

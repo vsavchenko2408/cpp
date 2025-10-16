@@ -43,3 +43,13 @@ Account::Account(double money, std::string name, size_t age)
     {
         return m_age;
     }
+
+// Реалізація перевантаженого оператора <<
+std::ostream& operator<<(std::ostream& os, const Account& account)
+{
+    os << account.m_id << " "
+       << account.m_money << " "
+       << account.m_name << " "
+       << account.m_age;
+    return os;
+}
