@@ -27,6 +27,7 @@ void debug()
 
 int main()
 {
+/*
     #ifdef DEBUG
    // debug();
     control accounts;
@@ -35,6 +36,6 @@ int main()
     accounts.show_all_accounts();
     accounts.save_database();
     #endif
-
+*/
     return 0;
 }
