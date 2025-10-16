@@ -24,3 +24,24 @@
            std::cout<< "Name: " <<  it.get_name() << " ID: " << it.get_ID() << std:: endl;
         }
     }
+
+    bool control::save_database()
+    {
+        file_database.open("Database.bin", file_database.binary | file_database.in | file_database.out);
+        if(file_database.is_open())
+        {
+        for(auto it : acc_database)
+        {
+            file_database << it << std::endl;
+        }
+
+        file_database.close();
+        return true;
+        }
+        else
+        {
+            std::cerr << "Dont open file!" << std::endl;
+            return false;
+        }
+
+    }

@@ -26,20 +26,20 @@ Account::Account(double money, std::string name, size_t age)
         return false;
     }
 
-    float Account::get_money()
+    float Account::get_money() const
     {
         return m_money;
     }
-    int Account::get_ID()
+    int Account::get_ID() const
     {
         return m_id;
     }
-    std::string Account::get_name()
+    std::string Account::get_name() const
     {
         return m_name;
     }
 
-    size_t Account::get_age()
+    size_t Account::get_age() const
     {
         return m_age;
     }

@@ -18,10 +18,10 @@ class Account
     //Account& operator=(Account&&) = delete;
     //Account(Account&&) = delete;
     bool draft_money(double draft);
-    float get_money(); 
-    int get_ID();
-    std::string get_name();
-    size_t get_age();
+    float get_money() const; 
+    int get_ID() const;
+    std::string get_name() const;
+    size_t get_age() const;
 };
 
 #endif
