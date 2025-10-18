@@ -15,7 +15,8 @@ public:
     ~control();
     void create_account(double money, const std::string& name, size_t age);
     void show_all_accounts();
-
+    bool draft_money(int id_draft, double draft_money);
+    bool add_money(int id_add, double add_money);
     bool save_database();
 };
 

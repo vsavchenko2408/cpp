@@ -43,7 +43,11 @@ Account::Account(double money, std::string name, size_t age)
     {
         return m_age;
     }
-
+    bool Account::add_money(double add_money)
+    {
+        m_money +=add_money;
+        return true;
+    }
 // Реалізація перевантаженого оператора <<
 std::ostream& operator<<(std::ostream& os, const Account& account)
 {

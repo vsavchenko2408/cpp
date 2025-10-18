@@ -22,7 +22,7 @@ class Account
     int get_ID() const;
     std::string get_name() const;
     size_t get_age() const;
-    
+    bool add_money(double add_money);
     // Перевантаження оператора << для виводу в потік
     friend std::ostream& operator<<(std::ostream& os, const Account& account);
 };
