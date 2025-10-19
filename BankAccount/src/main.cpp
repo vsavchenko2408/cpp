@@ -90,11 +90,12 @@ int main()
         default:
         {
             std::cerr << "Wrong input" << std::endl;
-        }
             break;
+        }
         }
     }
     while(choise != 0);
+    std::cout << "Goodbye!" << std::endl;
 /*
     #ifdef DEBUG
    // debug();
