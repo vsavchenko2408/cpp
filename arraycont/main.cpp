@@ -37,7 +37,7 @@ int main()
     std::cout << "Summ of array = " << summ << std::endl;
 
 
-    delete parr;
+    delete[] parr;
 
     return 0;
 }
