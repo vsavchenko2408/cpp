@@ -13,7 +13,7 @@ void show(char symb)
         for (size_t j = 0; j < 10; ++j)
         {
             std::cout << symb;
-            // std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
         }
         std::cout << std::endl;
     }
