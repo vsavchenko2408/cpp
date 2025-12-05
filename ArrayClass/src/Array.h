@@ -6,7 +6,7 @@ class Array
 {
     private:
     T* _array;
-    const unsigned int _size;
+    unsigned int _size;
     public:
     Array(): _size(0)
     {
