@@ -5,4 +5,12 @@ int main()
 {
     Array<int> ar(10);
     std::cout << "Size: " << ar.get_size() << std::endl;
+    for(int i = 0; i < ar.get_size();i++)
+    {
+        ar[i] = i+1;
+    }
+    for(int j = 0; j < ar.get_size();j++)
+    {
+        std::cout << ar[j] << std::endl;
+    }
 }
