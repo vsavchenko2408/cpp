@@ -1,6 +1,7 @@
 #ifndef ARRAY_H
 #define ARRAY_H
 
+#include <stdexcept>
 template <typename T>
 class Array
 {
@@ -36,7 +37,11 @@ class Array
         return *this;
     }
     T& operator[](unsigned int index)
-    {
+    {   
+        if(index > _size)
+        {
+            throw std::out_of_range("Out of range!");
+        }
         return _array[index];
     }
     
