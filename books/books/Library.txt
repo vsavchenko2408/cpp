@@ -1,4 +1,0 @@
-My Library
-Book 1,Author A,2000
-Book 2,Author B,2010
-Book 3,Author A,2005

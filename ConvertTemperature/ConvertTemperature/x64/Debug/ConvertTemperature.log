@@ -1,4 +1,0 @@
-﻿  MyForm.cpp
-E:\My Projects\ConvertTemperature\ConvertTemperature\MyForm.cpp(8,1): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
-  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
-  ConvertTemperature.vcxproj -> E:\My Projects\ConvertTemperature\x64\Debug\ConvertTemperature.exe

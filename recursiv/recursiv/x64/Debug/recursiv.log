@@ -1,3 +1,0 @@
-﻿  Source.cpp
-D:\My Projects\recursiv\recursiv\Source.cpp(18,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
-  recursiv.vcxproj -> D:\My Projects\recursiv\x64\Debug\recursiv.exe

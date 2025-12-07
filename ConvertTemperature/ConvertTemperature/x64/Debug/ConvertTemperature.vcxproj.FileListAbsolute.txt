@@ -1,4 +1,0 @@
-E:\My Projects\ConvertTemperature\ConvertTemperature\x64\Debug\ConvertTemperature.vcxproj.AssemblyReference.cache
-E:\My Projects\ConvertTemperature\ConvertTemperature\x64\Debug\ConvertTemperature.vcxproj.SuggestedBindingRedirects.cache
-E:\My Projects\ConvertTemperature\ConvertTemperature\x64\Debug\ConvertTemperature.MyForm.resources
-E:\My Projects\ConvertTemperature\ConvertTemperature\x64\Debug\ConvertTemperature.vcxproj.GenerateResource.cache
