@@ -38,7 +38,7 @@ class Array
     }
     T& operator[](unsigned int index)
     {   
-        if(index > _size)
+        if(index < 0 || index >= _size)
         {
             throw std::out_of_range("Out of range!");
         }

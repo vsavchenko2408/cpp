@@ -7,7 +7,7 @@ int main()
     std::cout << "Size: " << ar.get_size() << std::endl;
     try
     {
-    for(int i = 0; i < (ar.get_size()+1);i++)
+    for(int i = 0; i < ar.get_size();i++)
     {
         ar[i] = i+1;
     }
