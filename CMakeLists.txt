@@ -1,3 +1,3 @@
 cmake_minimum_required(VERSION 3.10)
 
-add_executable(main string/main.cpp)
+add_executable(main Notes/main.cpp)
