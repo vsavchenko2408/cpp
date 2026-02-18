@@ -15,6 +15,7 @@ public:
     ~Smartpointers();
 
     int get_data() const;
+    void set_data(int data);
 };
 
 

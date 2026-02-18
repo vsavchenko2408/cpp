@@ -57,3 +57,14 @@ int Smartpointers::get_data() const
         return 0;
     }
 }
+    void Smartpointers::set_data(int data)
+    {
+       if( _ptr != nullptr)
+       {
+        _ptr = new int(data);
+       }
+       else
+       {
+        *_ptr = data;
+       }
+    }
