@@ -32,12 +32,15 @@ class Array
         }
         else
         {
+            _size = 0;
             _array = nullptr;
         }
     }
     Array& operator=(const Array& copy)
     {
-        if(_array != copy._array && copy._size > 0)
+        if(this == &copy) return *this;
+        delete[] _array;
+        if(copy._size > 0)
         {
             this->_size = copy._size;
             this->_array = new T[_size];
@@ -45,6 +48,11 @@ class Array
             {
                 this->_array[i] = copy._array[i];
             }
+        }
+        else
+        {
+            this->_size = 0;
+            this->_array = nullptr;
         }
         return *this;
     }
@@ -62,7 +70,7 @@ class Array
         }
         temp[_size] = obj;
         delete[] _array;
-        _array - temp;
+        _array = temp;
         ++_size;
     }
 
