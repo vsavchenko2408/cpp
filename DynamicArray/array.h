@@ -1,68 +1,78 @@
-#ifndef ARRAY_Y
+#ifndef ARRAY_H
 #define ARRAY_H
 #include <cstddef>
+
 
 template<typename T>
 class Array
 {
-    size_t _SIZE;
-    T* _ptr;
+    T* _array;
+    size_t _size;
     public:
-    Array() = default;
-    Array(T& data, size_t size) : _SIZE(size)
+    Array()
     {
-        _ptr = new T[_SIZE];
+        _size = 0;
+        _array = new T[_size];
     }
-    Array(const Array& copy):_SIZE(copy._SIZE)
+    Array( size_t size) : _size(size)
     {
-      if(copy._SIZE > 0)
-      {
-        _ptr = new T[copy._SIZE];
-        for(int i = 0; i < _SIZE; ++i)
+        _array = new T[_size];
+    }
+    Array(const Array& copy)
+    {
+
+        if(copy._size > 0)
         {
-            _ptr[i] = copy._ptr[i];
-        }
-      }
-      else
-      {
-        _ptr = nullptr;
-      }
-    }
-    void push_back(const T& data)
-    {
-        ++_SIZE;
-        T* temp = new T[_SIZE+1];
-        for(int i = 0; i < _SIZE; i++)
-        {
-            temp[i] = _ptr[i];
-        }
-        temp[_SIZE] = data;
-        delete[] _ptr;
-        _ptr = temp;
-    }
-    T& operator[](size_t index)
-    {
-        return _ptr[index];
-    }
-    T& at(size_t index)
-    {
-        if(index <= _SIZE)
-        {
-            return _ptr[index];
+            _size = copy._size;
+            _array = new T[_size];
+            for(size_t i = 0; i < _size; ++i)
+            {
+                _array[i] = copy._array[i];
+            }
         }
         else
         {
-            return nullptr;
+            _array = nullptr;
         }
     }
-    size_t size() const
+    Array& operator=(const Array& copy)
     {
-        return _SIZE;
+        if(_array != copy._array && copy._size > 0)
+        {
+            this->_size = copy._size;
+            this->_array = new T[_size];
+            for(size_t i = 0; i < _size; ++i)
+            {
+                this->_array[i] = copy._array[i];
+            }
+        }
+        return *this;
     }
-    
+    T& operator[](size_t index) const
+    {
+        return _array[index];
+    }
+
+    void push_back(const T& obj)
+    {
+        T* temp = new T[_size+1];
+        for(size_t i = 0; i < _size; ++i)
+        {
+            temp[i] = _array[i];
+        }
+        temp[_size] = obj;
+        delete[] _array;
+        _array - temp;
+        ++_size;
+    }
+
+    size_t size()const
+    {
+        return _size;
+    }
     ~Array()
     {
-        delete[] _ptr;
+        delete[] _array;
     }
 };
 
